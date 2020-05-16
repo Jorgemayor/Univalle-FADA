@@ -1,1 +1,7 @@
-En este tipo de archivos irán las pruebas a realizar
+6 3 2
+Ciempiés 1
+Libélula 2
+Gato 3
+Perro 4
+Tapir 5
+Nutria 6
