@@ -1,0 +1,10 @@
+9 4 3
+Capibara 1
+Loro 2
+Caimán 3
+Boa 4
+Cocodrilo 5
+Cebra 6
+PanteraNegra 7
+Tigre 8
+León 9
