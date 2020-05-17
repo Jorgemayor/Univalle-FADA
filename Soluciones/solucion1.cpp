@@ -15,14 +15,14 @@ pair<string, int>* getInput(string testcase) {
 	int grandeza;
 	archivo >> n >> m >> k;
 	pair<string,int>* animals = new pair<string, int>[n];
-	for(int i = 0; i<n; i++){
+	for(int i=0; i<n; i++){
 			archivo >> name >> grandeza;
 		animals[i] = make_pair(name, grandeza);
 	}
 	return animals;
 }
 
-void someKindOfSort (pair<string, int>* animals) {
+void someKindOfSort(pair<string, int>* animals) {
 	
 	pair<string, int> sortedArray[n];
 	for(int i=0; i<n; i++)
