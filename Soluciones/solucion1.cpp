@@ -8,24 +8,21 @@ using namespace std;
 
 int n, m, k;
 
-int getInput() {
+pair<string, int>* getInput() {
 
     ifstream archivo("../Pruebas/prueba1.txt");
-    string nombre;
-    int peso;
-    archivo >>n >> m >> k;
-    cout << "Datos iniciales:" << n << m << k <<  endl;
-    pair<string,int> animales[n];
-    for(int i = 0;i <= n-1;i+=1){
-        archivo >>nombre >> peso;
-        animales[i] = make_pair(nombre, peso);
-        cout<<"animal: " << animales[i].first << " grandeza: " << animales[i].second << endl;
+    string name;
+    int grandeza;
+    archivo >> n >> m >> k;
+    pair<string,int>* animals = new pair<string, int>[n];
+    for(int i = 0; i<=n-1; i+=1){
+        archivo >> name >> grandeza;
+        animals[i] = make_pair(name, grandeza);
     }
-    return 1;
+    return animals;
 }
 
 int main() {
     
-    getInput();
-    return 0;
+    pair<string, int>* animals = getInput();
 }
