@@ -36,8 +36,8 @@ int main() {
 	string testcase = "prueba3";
 	pair<string, int>* animals = getInput(testcase);
 	someKindOfSort(animals);
-/*	for(int i=0; i<n; i++) {
+	for(int i=0; i<n; i++) {
 		cout << "a: " << animals[i].first << " g: " << animals[i].second << endl;
-	}*/
+	}
 	return 0;
 }
