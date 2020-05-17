@@ -33,4 +33,4 @@
 
 # Additional
 *.swp
-test
+.vscode
