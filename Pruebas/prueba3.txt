@@ -1,0 +1,7 @@
+5 4 3
+Leon 5
+Mariposa 1
+Jirafa 4
+Tortuga 3
+Cabra 2
+
