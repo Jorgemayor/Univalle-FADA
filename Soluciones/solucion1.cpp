@@ -38,6 +38,14 @@ void someKindOfSort(pair<string, int>* animals) {
 		animals[i] = sortedArray[i];
 }
 
+//Desde acá hasta la fución main
+
+
+
+/**
+ * Main function
+ *
+ */
 int main() {
 	
 	string testcase = "prueba3";
