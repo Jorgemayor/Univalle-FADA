@@ -9,19 +9,19 @@ using namespace std;
 int n, m, k;
 
 /**
- * Gets the input from the specific testcase.
+ * Gets the input from the specific testCase.
  * All the inputs must be in Pruebas directory.
  * 
- * @param testcase string --> Name of testcase file
+ * @param testCase string --> Name of testCase file
  * @return animals pointer --> Pointer to animals array, declared locally.
  */
-pair<string, int>* getInput(string testcase) {
+pair<string, int>* getInput(const string& testCase) {
 	
-	ifstream archivo("../Pruebas/"+testcase+".txt");
+	ifstream archivo("../Pruebas/" + testCase + ".txt");
 	string name;
 	int grandeza;
 	archivo >> n >> m >> k;
-	pair<string,int>* animals = new pair<string, int>[n];
+	auto animals = new pair<string, int>[n];
 	for(int i=0; i<n; i++){
 			archivo >> name >> grandeza;
 		animals[i] = make_pair(name, grandeza);
