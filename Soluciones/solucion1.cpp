@@ -8,9 +8,9 @@ using namespace std;
 
 int n, m, k;
 
-pair<string, int>* getInput() {
+pair<string, int>* getInput(string testcase) {
 
-    ifstream archivo("../Pruebas/prueba1.txt");
+    ifstream archivo("../Pruebas/"+testcase+".txt");
     string name;
     int grandeza;
     archivo >> n >> m >> k;
@@ -24,5 +24,7 @@ pair<string, int>* getInput() {
 
 int main() {
     
-    pair<string, int>* animals = getInput();
+    string testcase = "prueba1";
+    pair<string, int>* animals = getInput(testcase);
+    return 0;
 }
