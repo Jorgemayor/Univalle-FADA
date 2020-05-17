@@ -8,6 +8,13 @@ using namespace std;
 
 int n, m, k;
 
+/**
+ * Gets the input from the specific testcase.
+ * All the inputs must be in Pruebas directory.
+ * 
+ * @param testcase string --> Name of testcase file
+ * @return animals pointer --> Pointer to animals array, declared locally.
+ */
 pair<string, int>* getInput(string testcase) {
 	
 	ifstream archivo("../Pruebas/"+testcase+".txt");
