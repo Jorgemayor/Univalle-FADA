@@ -76,7 +76,7 @@ int grandezaParte( tuple<string, string, string> parte[], map<string, int> anima
         result += grandezaEscena(parte[i], animales);
     }
 
-    return 0;
+    return result;
 }
 
 /**
