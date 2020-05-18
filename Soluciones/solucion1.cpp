@@ -9,6 +9,7 @@
 using namespace std;
 
 int n, m, k;
+map<string, int> animals;
 
 /**
  * Reads the input related to the animals from an
@@ -76,10 +77,10 @@ tuple<string, string, string> escena2 = make_tuple("Cabra", "Tortuga","Jirafa");
 
 
 
-int grandezaEscena(tuple<string, string, string> escena, map<string, int> animales){
+int grandezaEscena(tuple<string, string, string> escena){
 
     int result = 0;
-    result = animales[get<0>(escena)] + animales[get<1>(escena)] + animales[get<2>(escena)];
+    result = animals[get<0>(escena)] + animals[get<1>(escena)] + animals[get<2>(escena)];
     //apply([](auto&&... args) {((cout << args << '\n'), ...);}, escena);
     return result;
 
@@ -87,13 +88,13 @@ int grandezaEscena(tuple<string, string, string> escena, map<string, int> animal
 
 
 
-int grandezaParte( tuple<string, string, string> parte[], map<string, int> animales){
+int grandezaParte( tuple<string, string, string> parte[]){
 
     int result = 0;
     //Parte de prueba
     for(int i=0; i<k; i++){
 
-        result += grandezaEscena(parte[i], animales);
+        result += grandezaEscena(parte[i]);
     }
 
     return result;
@@ -108,7 +109,7 @@ int main() {
 	string testCase = "prueba3";
 	ifstream file ("../Pruebas/" + testCase + ".txt");
 	file >> n >> m >> k;
-	map<string, int> animals = getAnimals(file);
+	animals = getAnimals(file);
 	getShow(file);
 	cout << "test " << animals["Mariposa"] << endl;
 	return 0;
