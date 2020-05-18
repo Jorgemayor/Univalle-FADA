@@ -66,10 +66,10 @@ void someKindOfSort(pair<string, int>* animals) {
 int main() {
 	
 	string testCase = "prueba3";
-	ifstream read ("../Pruebas/" + testCase + ".txt");
-	read >> n >> m >> k;
-	pair<string, int>* animals = getAnimals(read);
-	getShow(read);
+	ifstream file ("../Pruebas/" + testCase + ".txt");
+	file >> n >> m >> k;
+	pair<string, int>* animals = getAnimals(file);
+	getShow(file);
 	someKindOfSort(animals);
 	for(int i=0; i<n; i++) {
 		cout << "a: " << animals[i].first << " g: " << animals[i].second << endl;
