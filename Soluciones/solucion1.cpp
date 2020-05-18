@@ -35,13 +35,13 @@ pair<string, int>* getAnimals(ifstream & file) {
  * @param file ifstream --> Test case file.
  * @return show pointer --> Pointer to show's matrix, declared locally.
  */
-tuple<string, string, string>* getShow(ifstream & file) {
+void getShow(ifstream & file) {
 
 	string firstAnimal, secondAnimal, thirdAnimal;
 	auto show = new tuple<string, string, string>[60][60];
 	show[0][0] = make_tuple("rhazek", "nico", "jorge");
-
-	return show;
+	cout << "El más gay, " << get<0>(show[0][0]) << endl;
+	//return show;
 }
 
 
@@ -74,7 +74,7 @@ int main() {
 	ifstream file ("../Pruebas/" + testCase + ".txt");
 	file >> n >> m >> k;
 	pair<string, int>* animals = getAnimals(file);
-	tuple<string, string, string>* show = getShow(file);
+	getShow(file);
 	someKindOfSort(animals);
 	for(int i=0; i<n; i++) {
 		cout << "a: " << animals[i].first << " g: " << animals[i].second << endl;
