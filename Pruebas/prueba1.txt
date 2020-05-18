@@ -5,3 +5,14 @@ Gato 3
 Perro 4
 Tapir 5
 Nutria 6
+
+Tapir Nutria Perro
+Tapir Perro Gato
+Ciempiés Tapir Gato
+Gato Ciempiés Libélula
+
+Tapir Nutria Perro
+Ciempiés Tapir Gato
+
+Gato Ciempés Libélula
+Tapir Perro Gato
