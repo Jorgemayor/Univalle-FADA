@@ -9,31 +9,35 @@ using namespace std;
 int n, m, k;
 
 /**
- * Gets the input from the specific testCase.
- * All the inputs must be in Pruebas directory.
+ * Reads the input related to the animals from an
+ * specific test case in the directory Pruebas.
  * 
- * @param testCase string --> Name of testCase file
- * @return animals pointer --> Pointer to animals array, declared locally.
+ * @param file ifstream --> Test case file.
+ * @return animals pointer --> Pointer to animals' array, declared locally.
  */
-pair<string, int>* getInput(const string& testCase) {
+pair<string, int>* getAnimals(ifstream & file) {
 	
-	ifstream archivo("../Pruebas/" + testCase + ".txt");
 	string name;
-	int grandeza;
-	archivo >> n >> m >> k;
+	int awesomeness;
 	auto animals = new pair<string, int>[n];
 	for(int i=0; i<n; i++){
-			archivo >> name >> grandeza;
-		animals[i] = make_pair(name, grandeza);
+			file >> name >> awesomeness;
+		animals[i] = make_pair(name, awesomeness);
 	}
 	return animals;
 }
 
 /**
- * Reads all the input related to the show
+ * Reads the input related to the show from an
+ * specific test case in the directory Pruebas.
  *
+ * @param file ifstream --> Test case file.
+ * @return show pointer --> Pointer to show's matrix, declared locally.
  */
+void getShow(ifstream & file) {
 
+	
+}
 
 
 /**
@@ -61,8 +65,11 @@ void someKindOfSort(pair<string, int>* animals) {
  */
 int main() {
 	
-	string testcase = "prueba3";
-	pair<string, int>* animals = getInput(testcase);
+	string testCase = "prueba3";
+	ifstream read ("../Pruebas/" + testCase + ".txt");
+	read >> n >> m >> k;
+	pair<string, int>* animals = getAnimals(read);
+	getShow(read);
 	someKindOfSort(animals);
 	for(int i=0; i<n; i++) {
 		cout << "a: " << animals[i].first << " g: " << animals[i].second << endl;
