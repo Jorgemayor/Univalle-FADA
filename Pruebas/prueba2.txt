@@ -11,7 +11,7 @@ León 9
 
 Caimán Capibara Loro
 Boa Caimán Capibara
-Cocodrilo capibara Loro
+Cocodrilo Capibara Loro
 PanteraNegra Cocodrilo Loro
 Tigre PanteraNegra Cebra
 Tigre Cebra PanteraNegra
@@ -22,7 +22,7 @@ Tigre Cebra PanteraNegra
 
 PanteraNegra Cocodrilo Loro
 León PanteraNegra Cebra
-Cocodrilo capibara Loro
+Cocodrilo Capibara Loro
 
 Boa Caimán Capibara
 León Caimán Loro
