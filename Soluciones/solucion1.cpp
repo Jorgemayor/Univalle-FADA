@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string.h>
+#include <map>
 #include <tuple>
 #include <utility>
 #include <stdlib.h>
@@ -14,16 +15,17 @@ int n, m, k;
  * specific test case in the directory Pruebas.
  * 
  * @param file ifstream --> Test case file.
- * @return animals pointer --> Pointer to animals' array, declared locally.
+ * @return animals map --> Maps that relates all
+ * animals with their awesomeness.
  */
-pair<string, int>* getAnimals(ifstream & file) {
+map<string, int> getAnimals(ifstream & file) {
 	
 	string name;
 	int awesomeness;
-	auto animals = new pair<string, int>[n];
+	map<string, int> animals;
 	for(int i=0; i<n; i++){
-			file >> name >> awesomeness;
-		animals[i] = make_pair(name, awesomeness);
+		file >> name >> awesomeness;
+		animals[name] = awesomeness;
 	}
 	return animals;
 }
@@ -73,11 +75,9 @@ int main() {
 	string testCase = "prueba3";
 	ifstream file ("../Pruebas/" + testCase + ".txt");
 	file >> n >> m >> k;
-	pair<string, int>* animals = getAnimals(file);
+	map<string, int> animals = getAnimals(file);
 	getShow(file);
-	someKindOfSort(animals);
-	for(int i=0; i<n; i++) {
-		cout << "a: " << animals[i].first << " g: " << animals[i].second << endl;
-	}
+	cout << "test " << animals["Mariposa"] << endl;
+	//someKindOfSort(animals);
 	return 0;
 }
