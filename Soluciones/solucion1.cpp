@@ -37,13 +37,33 @@ map<string, int> getAnimals(ifstream & file) {
  * @param file ifstream --> Test case file.
  * @return show pointer --> Pointer to show's matrix, declared locally.
  */
-tuple<string, string, string>* getShow(ifstream & file) {
+void getShow(ifstream & file) {
 
-	string firstAnimal, secondAnimal, thirdAnimal;
-	tuple<string, string, string>* show = new tuple<string, string, string>[k*(m-1)];
-	show[0] = make_tuple("rhazek", "nico", "jorge");
-	cout << "El más gay, " << get<0>(show[0]) << endl;
-	return show;
+	string animal;
+	string show[m][k*(m-1)][3];
+
+	for(int i=0; i<k*(m-1); i++){
+		file>>animal;
+		show[0][i][0] = animal;
+		file>>animal;
+		show[0][i][1] = animal;
+		file>>animal;
+		show[0][i][2] = animal;
+	}
+
+	for(int i=1; i<m; i++){
+
+		for(int j=0; j<k; j++){
+			file>>animal;
+			show[i][j][0] = animal;
+			file>>animal;
+			show[i][j][1] = animal;
+			file>>animal;
+			show[i][j][2] = animal;
+		}
+	}
+
+	
 }
 
 //Desde acá hasta la fución main
