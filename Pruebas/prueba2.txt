@@ -8,3 +8,22 @@ Cebra 6
 PanteraNegra 7
 Tigre 8
 León 9
+
+Caimán Capibara Loro
+Boa Caimán Capibara
+Cocodrilo capibara Loro
+PanteraNegra Cocodrilo Loro
+Tigre PanteraNegra Cebra
+Tigre Cebra PanteraNegra
+
+Caimán Capibara Loro
+Tigre Loro Capibara
+Tigre Cebra PanteraNegra
+
+PanteraNegra Cocodrilo Loro
+León PanteraNegra Cebra
+Cocodrilo capibara Loro
+
+Boa Caimán Capibara
+León Caimán Loro
+León Cocodrilo Boa
