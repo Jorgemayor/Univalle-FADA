@@ -48,7 +48,36 @@ tuple<string, string, string>* getShow(ifstream & file) {
 
 //Desde acá hasta la fución main
 
+tuple<string, string, string> escena0 = make_tuple("Cabra", "Mariposa","Leon");
+tuple<string, string, string> escena1 = make_tuple("Jirafa", "Mariposa","Tortuga");
+tuple<string, string, string> escena2 = make_tuple("Cabra", "Tortuga","Jirafa");
 
+
+
+
+
+int grandezaEscena(tuple<string, string, string> escena, map<string, int> animales){
+
+    int result = 0;
+    result = animales[get<0>(escena)] + animales[get<1>(escena)] + animales[get<2>(escena)];
+    //apply([](auto&&... args) {((cout << args << '\n'), ...);}, escena);
+    return result;
+
+}
+
+
+
+int grandezaParte( tuple<string, string, string> parte[], map<string, int> animales){
+
+    int result = 0;
+    //Parte de prueba
+    for(int i=0; i<k; i++){
+
+        result += grandezaEscena(parte[i], animales);
+    }
+
+    return 0;
+}
 
 /**
  * Main function
