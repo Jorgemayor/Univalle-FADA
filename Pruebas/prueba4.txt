@@ -1,0 +1,30 @@
+10 3 4
+Murciélago 3
+OsoPolar 8
+Elefante 10
+Rinoceronte 9
+Chimpancé 6
+Araña 2
+Hormiga 1
+Ocelote 7
+Búho 4
+Koala 5
+
+Hormiga Araña Murciélago
+Búho Koala Chimpancé
+Ocelote OsoPolar Rinoceronte
+OsoPolar Rinoceronte Elefante
+Búho Murciélago Araña
+OsoPolar Koala Chimpancé
+Elefante Araña Hormiga
+Ocelote Koala Rinoceronte
+
+Hormiga Araña Chimpancé
+Ocelote OsoPolar Búho
+Koala Rinoceronte Elefante
+Búho Murciélago OsoPolar
+
+Ocelote Araña Chimpancé
+Rinoceronte Búho OsoPolar
+Ocelote Hormiga Elefante
+Elefante Rinoceronte OsoPolar
