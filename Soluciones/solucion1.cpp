@@ -38,11 +38,10 @@ pair<string, int>* getAnimals(ifstream & file) {
 tuple<string, string, string>* getShow(ifstream & file) {
 
 	string firstAnimal, secondAnimal, thirdAnimal;
-	auto show = new tuple<string, string, string>[m][k*(m-1)];
-	show[0] = make_tuple("rhazek", "nico", "jorge");
+	auto show = new tuple<string, string, string>[60][60];
+	show[0][0] = make_tuple("rhazek", "nico", "jorge");
 
-	return tuple;
-	
+	return show;
 }
 
 
