@@ -29,6 +29,19 @@ pair<string, int>* getInput(const string& testCase) {
 	return animals;
 }
 
+/**
+ * Reads all the input related to the show
+ *
+ */
+
+
+
+/**
+ * Sorts the given animals due to their awesomeness
+ * 
+ * @param animals pointer --> Pointer of the given
+ * array of animals to sort
+ */
 void someKindOfSort(pair<string, int>* animals) {
 	
 	pair<string, int> sortedArray[n];
