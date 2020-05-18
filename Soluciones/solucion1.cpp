@@ -43,23 +43,7 @@ void getShow(ifstream & file) {
 	auto show = new tuple<string, string, string>[60][60];
 	show[0][0] = make_tuple("rhazek", "nico", "jorge");
 	cout << "El más gay, " << get<0>(show[0][0]) << endl;
-	//return show;
-}
-
-
-/**
- * Sorts the given animals due to their awesomeness
- * 
- * @param animals pointer --> Pointer of the given
- * array of animals to sort
- */
-void someKindOfSort(pair<string, int>* animals) {
-	
-	pair<string, int> sortedArray[n];
-	for(int i=0; i<n; i++)
-		sortedArray[animals[i].second - 1] = animals[i];
-	for(int i=0; i<n; i++)
-		animals[i] = sortedArray[i];
+	//return 0;
 }
 
 //Desde acá hasta la fución main
@@ -78,6 +62,5 @@ int main() {
 	map<string, int> animals = getAnimals(file);
 	getShow(file);
 	cout << "test " << animals["Mariposa"] << endl;
-	//someKindOfSort(animals);
 	return 0;
 }
