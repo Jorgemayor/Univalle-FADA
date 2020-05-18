@@ -13,8 +13,11 @@ Caimán Capibara Loro
 Boa Caimán Capibara
 Cocodrilo Capibara Loro
 PanteraNegra Cocodrilo Loro
-Tigre PanteraNegra Cebra
-Tigre Cebra PanteraNegra
+Tigre Loro Capibara
+León Caimán Loro
+León Cocodrilo Boa
+León PanteraNegra Cebra
+Tigra Cebra PanteraNegra
 
 Caimán Capibara Loro
 Tigre Loro Capibara
