@@ -17,8 +17,6 @@ vector<vector<vector<string>>> show;
  * specific test case in the directory Pruebas.
  * 
  * @param file ifstream --> Test case file.
- * @return animals map --> Maps that relates all
- * animals with their awesomeness.
  */
 void setAnimals(ifstream & file) {
 	
@@ -35,7 +33,6 @@ void setAnimals(ifstream & file) {
  * specific test case in the directory Pruebas.
  *
  * @param file ifstream --> Test case file.
- * @return show pointer --> Pointer to show's matrix, declared locally.
  */
 void setShow(ifstream & file){
 	
@@ -57,6 +54,7 @@ void setShow(ifstream & file){
 	}
 
 	show.push_back(part);
+	
 	for(int i=1; i<m; i++){
 		part.clear();
 		
@@ -119,9 +117,12 @@ int main() {
 	ifstream file ("../Pruebas/" + testCase + ".txt");
 	file >> n >> m >> k;
 	setAnimals(file);
-	cout << "test animals " << animals["Mariposa"] << endl;
-	
 	setShow(file);
+	
+
+	//Pruebas
+	
+	cout << "test animals " << animals["Mariposa"] << endl;
 
 	cout << endl << "test show" << endl;
 
