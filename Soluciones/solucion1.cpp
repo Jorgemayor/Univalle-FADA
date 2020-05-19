@@ -2,7 +2,6 @@
 #include <string.h>
 #include <map>
 #include <vector>
-#include <utility>
 #include <stdlib.h>
 #include <string.h>
 #include <fstream>
@@ -74,37 +73,38 @@ void setShow(ifstream & file){
 	}
 }
 
-//Desde acá hasta la fución main
+/**
+ * Gets the awesomeness of on scene
+ * 
+ * @param scene vector<string> --> vector representing
+ * a part's scene.
+ * @return result int --> Value of the awesomeness of
+ * the scene.
+ */
+int getSceneAwesomeness(vector<string> scene){
 
-tuple<string, string, string> escena0 = make_tuple("Cabra", "Mariposa","Leon");
-tuple<string, string, string> escena1 = make_tuple("Jirafa", "Mariposa","Tortuga");
-tuple<string, string, string> escena2 = make_tuple("Cabra", "Tortuga","Jirafa");
+	int result = animals[scene[0]] + animals[scene[1]] + animals[scene[2]];
 
-
-
-
-
-int grandezaEscena(tuple<string, string, string> escena){
-
-    int result = 0;
-    result = animals[get<0>(escena)] + animals[get<1>(escena)] + animals[get<2>(escena)];
-    //apply([](auto&&... args) {((cout << args << '\n'), ...);}, escena);
-    return result;
-
+	return result;
 }
 
 
+/**
+ * Gets the awesomeness of a part
+ * 
+ * @param part vector<vector<string>> --> vector
+ * representing a show's part.
+ * @return result int --> Value of the awesomeness of
+ * the part.
+ */
+int getPartAwesomeness(vector<vector<string>> part){
 
-int grandezaParte( tuple<string, string, string> parte[]){
-
-    int result = 0;
-    //Parte de prueba
-    for(int i=0; i<k; i++){
-
-        result += grandezaEscena(parte[i]);
-    }
-
-    return result;
+	int result = 0;
+    
+	for(int i=0; i<part.size(); i++)
+		result += getSceneAwesomeness(part[i]);
+	
+	return result;
 }
 
 /**
