@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string.h>
-#include <iomanip> 
-#include <map>
+#include <iomanip>
 #include <unordered_map>
 #include <vector>
 #include <stdlib.h>
@@ -11,8 +10,6 @@ using namespace std;
 
 int n, m, k;
 vector<vector<vector<string>>> show;
-map<vector<string>, vector<string>> sortedScenes;
-//unordered_map<vector<string>, int> scenesAwesomeness;
 unordered_map<string, int> animals;
 
 /**
@@ -145,12 +142,6 @@ void sortAnimals() {
 
 		part = show[i];
 		for(int j=0; j<part.size(); j++) {
-			
-			vector<string> sortedScene = sortedScenes[part[j]];
-			if(i and sortedScene.size()) {
-				show[i][j] = sortedScene;
-				continue;
-			}
 
 			scene = part[j];
 			int awesomenessFirstAnimal = animals[scene[0]];
@@ -196,7 +187,7 @@ void sortAnimals() {
 }
 
 /**
- * Sorts the scenes of each part of the show.
+ * Sorts the scenes of each part of the show by counting sort.
  * 
  */
 void sortScenes() {
