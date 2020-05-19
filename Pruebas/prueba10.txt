@@ -9,3 +9,39 @@ Ballena 8
 Ardilla 9
 Armadillo 1
 Libélula 6
+
+Libélula Lobo Jirafa
+Armadillo Ardilla Ballena
+Elefante Jabalí Cerdo
+Lobo Mantarraya Cerdo
+Jabalí Elefante Jirafa
+Ballena Ardilla Armadillo
+Libélula Lobo Mantarraya
+Libélula Ardilla Jirafa
+Armadillo Ballena Elefante
+Ardilla Jirafa Jabalí
+Ballena Elefante Cerdo
+Jirafa Jabalí Mantarraya
+Elefante Cerdo Lobo
+Mantarraya Elefante Armadillo
+Mantarraya Ardilla Cerdo
+
+Mantarraya Ardilla Cerdo
+Ballena Elefante Cerdo
+Libélula Lobo Jirafa
+
+Mantarraya Elefante Armadillo
+Elefante Cerdo Lobo
+Jirafa Jabalí Mantarraya
+
+Armadillo Ballena Elefante
+Lobo Mantarraya Cerdo
+Armadillo Ardilla Ballena
+
+Libélula Ardilla Jirafa
+Libélula Lobo Mantarraya
+Ballena Ardilla Armadillo
+
+Jabalí Elefante Jirafa
+Elefante Jabalí Cerdo
+Ardilla Jirafa Jabalí

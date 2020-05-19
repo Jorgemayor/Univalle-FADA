@@ -14,3 +14,26 @@ CetiaJaponés 12
 Lobo 14
 Marmota 13
 Tucán 15
+
+DragónDeKomodo Búfalo Camaleón
+Camarón Bisonte Buitre
+Burro CochinillaDeLaHumedad Cocodrilo
+Cerdo CerdoHormiguero CetiaJaponés
+Lobo Marmota Tucán
+Tucán Burro CetiaJaponés
+Marmota Buitre Bisonte
+Cerdo Lobo Cocodrilo
+CerdoHormiguero Camaleón DragónDeKomodo
+CochinillaDeLaHumedad Burro Camarón
+
+DragónDeKomodo Búfalo Camaleón
+Burro CochinillaDeLaHumedad Cocodrilo
+Lobo Marmota Tucán
+Marmota Buitre Bisonte
+CerdoHormiguero Camaleón DragónDeKomodo
+
+CochinillaDeLaHumedad Burro Camarón
+Tucán Burro CetiaJaponés
+Cerdo Lobo Cocodrilo
+Camarón Bisonte Buitre
+Cerdo CerdoHormiguero CetiaJaponés
