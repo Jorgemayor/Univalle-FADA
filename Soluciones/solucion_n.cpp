@@ -152,36 +152,29 @@ void sortAnimals() {
 			
 				if(awesomenessSecondAnimal < awesomenessThirdAnimal) {
 				
-					sortedScenes[scene] = scene;
+					continue;
 	
 				} else if(awesomenessFirstAnimal < awesomenessThirdAnimal) {
 				
 					swap(show[i][j][1], show[i][j][2]);
-					sortedScenes[scene] = show[i][j];
 				} else {
 					
 					swap(show[i][j][1], show[i][j][2]);
 					swap(show[i][j][0], show[i][j][1]);
-					sortedScenes[scene] = show[i][j];
 				}
 			} else if(awesomenessFirstAnimal < awesomenessThirdAnimal) {
 			
 				swap(show[i][j][0], show[i][j][1]);
-				sortedScenes[scene] = show[i][j];
 	
 			} else if(awesomenessSecondAnimal < awesomenessThirdAnimal) {
 				
 				swap(show[i][j][0], show[i][j][2]);
 				swap(show[i][j][0], show[i][j][1]);
-				sortedScenes[scene] = show[i][j];
 	
 			} else {
 				
 				swap(show[i][j][0], show[i][j][2]);
-				sortedScenes[scene] = show[i][j];
 			}
-
-			//scenesAwesomeness[show[i][j]] = awesomenessFirstAnimal + awesomenessSecondAnimal + awesomenessThirdAnimal;
 		}
 	}
 }
