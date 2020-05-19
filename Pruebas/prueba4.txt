@@ -19,12 +19,12 @@ OsoPolar Koala Chimpancé
 Elefante Araña Hormiga
 Ocelote Koala Rinoceronte
 
-Hormiga Araña Chimpancé
-Ocelote OsoPolar Búho
-Koala Rinoceronte Elefante
-Búho Murciélago OsoPolar
+Hormiga Araña Murciélago
+Ocelote OsoPolar Rinoceronte
+Búho Murciélago Araña
+OsoPolar Koala Chimpancé
 
-Ocelote Araña Chimpancé
-Rinoceronte Búho OsoPolar
-Ocelote Hormiga Elefante
-Elefante Rinoceronte OsoPolar
+Búho Koala Chimpancé
+Ocelote Koala Rinoceronte
+OsoPolar Rinoceronte Elefante
+Elefante Araña Hormiga

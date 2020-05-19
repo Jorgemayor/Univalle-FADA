@@ -1,32 +1,27 @@
-5 4 3
-Leon 5
-Mariposa 1
-Jirafa 4
-Tortuga 3
-Cabra 2
+10 4 2
+Avispa 1
+Flamenco 2
+Gecko 3
+Gorila 4
+Halcón 5
+Jabalí 6
+Manatí 7
+Ornitorrinco 8
+Zorro 9
+Avestruz 10
 
-Leon Jirafa Cabra
-Mariposa Tortuga Leon
-Jirafa Tortuga Leon
-Tortuga Cabra Mariposa
-Cabra Tortuga Leon
-Leon Tortuga Mariposa
-Mariposa Jirafa Cabra
-Jirafa Leon Cabra
-Tortuga Jirafa Mariposa
+Avestruz Gecko Gorila
+Manatí Jabalí Zorro
+Avispa Halcón Ornitorrinco
+Flamenco Gorila Ornitorrinco
+Manatí Avispa Zorro
+Ornitorrinco Gorila Gecko
 
-Mariposa Tortuga Jirafa
-Cabra Leon Jirafa
-Tortuga Mariposa Leon
+Avispa Halcón Ornitorrinco
+Avestruz Gecko Gorila
 
-Leon Mariposa Jirafa
-Jirafa Tortuga Leon
-Cabra Jirafa  Tortuga
+Flamenco Gorila Ornitorrinco
+Manatí Jabalí Zorro
 
-Tortuga Leon Cabra
-Mariposa Leon Jirafa
-Cabra Leon Mariposa
-
-Leon Mariposa Tortuga
-Leon Mariposa Jirafa
-Jirafa Tortuga Cabra
+Manatí Avispa Zorro
+Ornitorrinco Gorila Gecko

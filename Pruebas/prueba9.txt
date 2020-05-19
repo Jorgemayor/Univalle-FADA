@@ -1,0 +1,16 @@
+15 3 5
+DragónDeKomodo 4
+Búfalo 2
+Camaleón 1
+Camarón 3
+Bisonte 7
+Buitre 5
+Burro 9
+CochinillaDeLaHumedad 6
+Cocodrilo 8
+Cerdo 11
+CerdoHormiguero 10
+CetiaJaponés 12
+Lobo 14
+Marmota 13
+Tucán 15

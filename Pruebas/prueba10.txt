@@ -1,0 +1,11 @@
+10 6 3
+Lobo 4
+Mantarraya 3
+Cerdo 5
+Jabalí 7
+Elefante 2
+Jirafa 10
+Ballena 8
+Ardilla 9
+Armadillo 1
+Libélula 6

@@ -1,0 +1,7 @@
+6 4 5
+Erizo 4
+ErizoDeMar 5
+Escarabajo 6
+Escorpión 1
+EsponjasDeMar 2
+EspátulaRosada 3

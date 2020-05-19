@@ -13,20 +13,20 @@ Caimán Capibara Loro
 Boa Caimán Capibara
 Cocodrilo Capibara Loro
 PanteraNegra Cocodrilo Loro
-Tigre Loro Capibara
-León Caimán Loro
-León Cocodrilo Boa
-León PanteraNegra Cebra
+Tigre PanteraNegra Cebra
 Tigre Cebra PanteraNegra
+León Boa Cebra
+PanteraNegra Tigre León
+Cocodrilo Caimán Boa
 
 Caimán Capibara Loro
-Tigre Loro Capibara
+PanteraNegra Tigre León
 Tigre Cebra PanteraNegra
 
 PanteraNegra Cocodrilo Loro
-León PanteraNegra Cebra
+Cocodrilo Caimán Boa
 Cocodrilo Capibara Loro
 
 Boa Caimán Capibara
-León Caimán Loro
-León Cocodrilo Boa
+Tigre PanteraNegra Cebra
+León Boa Cebra

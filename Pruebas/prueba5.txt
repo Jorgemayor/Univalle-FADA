@@ -1,0 +1,29 @@
+6 4 3
+Rinoceronte 1
+Toro 3
+Elefante 4
+Jirafa 2
+RanaToro 5
+Lobo 6
+
+Rinoceronte Toro Elefante
+Jirafa RanaToro Lobo
+Rinoceronte Elefante RanaToro
+Toro Jirafa Lobo
+Rinoceronte Elefante Jirafa
+Toro RanaToro Lobo
+Lobo Jirafa Elefante
+RanaToro Toro Rinoceronte
+RanaToro Elefante Toro
+
+Rinoceronte Toro Elefante
+Rinoceronte Elefante RanaToro
+RanaToro Elefante Toro
+
+RanaToro Toro Rinoceronte
+Rinoceronte Elefante Jirafa
+Jirafa RanaToro Lobo
+
+Lobo Jirafa Elefante
+Toro RanaToro Lobo
+Toro Jirafa Lobo
