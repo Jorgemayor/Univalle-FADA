@@ -8,8 +8,10 @@
 using namespace std;
 
 int n, m, k;
-map<string, int> animals;
 vector<vector<vector<string>>> show;
+map<vector<string>, vector<string>> sortedScenes;
+map<vector<string>, int> scenesAwesomeness;
+map<string, int> animals;
 
 /**
  * Reads the input related to the animals from an
@@ -88,7 +90,6 @@ int getSceneAwesomeness(vector<string> scene){
 	return result;
 }
 
-
 /**
  * Gets the awesomeness of a part
  * 
@@ -108,6 +109,99 @@ int getPartAwesomeness(vector<vector<string>> part){
 }
 
 /**
+ * Gets the awesomeness of the show
+ * 
+ * @return result int --> Value of the awesomeness of
+ * the part.
+ */
+int getShowAwesomeness(){
+
+	//ToDo
+	return 0;
+}
+
+/**
+ * Sorts the animals of each scene of each part of the show.
+ * 
+ */
+void sortAnimals() {
+	
+	vector<vector<string>> part;
+	vector<string> scene;
+
+	for(int i=0; i<m; i++) {
+
+		part = show[i];
+		for(int j=0; j<part.size(); j++) {
+			
+			vector<string> sortedScene = sortedScenes[part[j]];
+			if(i and sortedScene.size()) {
+				show[i][j] = sortedScene;
+				continue;
+			}
+
+			scene = part[j];
+			int awesomenessFirstAnimal = animals[scene[0]];
+			int awesomenessSecondAnimal = animals[scene[1]];
+			int awesomenessThirdAnimal = animals[scene[2]];
+			
+			if(awesomenessFirstAnimal < awesomenessSecondAnimal) {
+			
+				if(awesomenessSecondAnimal < awesomenessThirdAnimal) {
+				
+					sortedScenes[scene] = scene;
+	
+				} else if(awesomenessFirstAnimal < awesomenessThirdAnimal) {
+				
+					swap(show[i][j][1], show[i][j][2]);
+					sortedScenes[scene] = show[i][j];
+				} else {
+					
+					swap(show[i][j][1], show[i][j][2]);
+					swap(show[i][j][0], show[i][j][1]);
+					sortedScenes[scene] = show[i][j];
+				}
+			} else if(awesomenessFirstAnimal < awesomenessThirdAnimal) {
+			
+				swap(show[i][j][0], show[i][j][1]);
+				sortedScenes[scene] = show[i][j];
+	
+			} else if(awesomenessSecondAnimal < awesomenessThirdAnimal) {
+				
+				swap(show[i][j][0], show[i][j][2]);
+				swap(show[i][j][0], show[i][j][1]);
+				sortedScenes[scene] = show[i][j];
+	
+			} else {
+				
+				swap(show[i][j][0], show[i][j][2]);
+				sortedScenes[scene] = show[i][j];
+			}
+
+			scenesAwesomeness[show[i][j]] = awesomenessFirstAnimal + awesomenessSecondAnimal + awesomenessThirdAnimal;
+		}
+	}
+}
+
+/**
+ * Sorts the scenes of each part of the show.
+ * 
+ */
+void sortScenes() {
+
+	//ToDo
+}
+
+/**
+ * Sorts the parts of the show.
+ * 
+ */
+void sortParts() {
+
+	//ToDo
+}
+
+/**
  * Main function
  *
  */
@@ -118,7 +212,9 @@ int main() {
 	file >> n >> m >> k;
 	setAnimals(file);
 	setShow(file);
-	
+	sortAnimals();
+	sortScenes();
+	sortParts();
 
 	//Pruebas
 	
