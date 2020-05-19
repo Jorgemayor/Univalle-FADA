@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include <map>
-#include <tuple>
+#include <vector>
 #include <utility>
 #include <stdlib.h>
 #include <string.h>
@@ -10,6 +10,7 @@ using namespace std;
 
 int n, m, k;
 map<string, int> animals;
+vector<vector<vector<string>>> show;
 
 /**
  * Reads the input related to the animals from an
@@ -19,16 +20,14 @@ map<string, int> animals;
  * @return animals map --> Maps that relates all
  * animals with their awesomeness.
  */
-map<string, int> getAnimals(ifstream & file) {
+void setAnimals(ifstream & file) {
 	
 	string name;
 	int awesomeness;
-	map<string, int> animals;
 	for(int i=0; i<n; i++){
 		file >> name >> awesomeness;
 		animals[name] = awesomeness;
 	}
-	return animals;
 }
 
 /**
@@ -38,33 +37,43 @@ map<string, int> getAnimals(ifstream & file) {
  * @param file ifstream --> Test case file.
  * @return show pointer --> Pointer to show's matrix, declared locally.
  */
-void getShow(ifstream & file) {
-
+void setShow(ifstream & file){
+	
+	vector<vector<string>> part;
+	vector<string> scene;
 	string animal;
-	string show[m][k*(m-1)][3];
 
 	for(int i=0; i<k*(m-1); i++){
+		scene.clear();
+
 		file>>animal;
-		show[0][i][0] = animal;
+		scene.push_back(animal);
 		file>>animal;
-		show[0][i][1] = animal;
+		scene.push_back(animal);
 		file>>animal;
-		show[0][i][2] = animal;
+		scene.push_back(animal);
+
+		part.push_back(scene);
 	}
 
+	show.push_back(part);
 	for(int i=1; i<m; i++){
-
+		part.clear();
+		
 		for(int j=0; j<k; j++){
+			scene.clear();
+			
 			file>>animal;
-			show[i][j][0] = animal;
+			scene.push_back(animal);
 			file>>animal;
-			show[i][j][1] = animal;
+			scene.push_back(animal);
 			file>>animal;
-			show[i][j][2] = animal;
-		}
-	}
+			scene.push_back(animal);
 
-	
+			part.push_back(scene);
+		}
+		show.push_back(part);
+	}
 }
 
 //Desde acá hasta la fución main
@@ -109,8 +118,33 @@ int main() {
 	string testCase = "prueba3";
 	ifstream file ("../Pruebas/" + testCase + ".txt");
 	file >> n >> m >> k;
-	animals = getAnimals(file);
-	getShow(file);
-	cout << "test " << animals["Mariposa"] << endl;
+	setAnimals(file);
+	cout << "test animals " << animals["Mariposa"] << endl;
+	
+	setShow(file);
+
+	cout << endl << "test show" << endl;
+
+	cout << endl << "Apertura" << endl;
+
+	for(int i=0; i<k*(m-1); i++) {
+		for(int j=0; j<3; j++)
+			cout << show[0][i][j] << " ";
+		cout << endl;
+	}
+
+	cout << endl;
+
+	for(int i=1; i<m; i++) {
+		cout << "Parte " << i << endl;
+		for(int j=0; j<k; j++) {
+			for(int l=0; l<3; l++)
+				cout << show[i][j][l] << " ";
+			cout << endl;
+		}
+
+		cout << endl;
+	}
+
 	return 0;
 }
