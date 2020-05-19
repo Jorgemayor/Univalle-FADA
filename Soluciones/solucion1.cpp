@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string.h>
+#include <iomanip> 
 #include <map>
 #include <unordered_map>
 #include <vector>
@@ -110,28 +111,22 @@ int getPartAwesomeness(vector<vector<string>> part){
 }
 
 /**
- * Gets the average awesomeness of the show
+ * Gets the average awesomeness of the show.
  * 
- * @return average int --> Value of the average awesomeness of
+ * @return average float --> Value of the average awesomeness of
  * the show.
  */
-
-
-
-
 float getShowAverageAwesomeness(){
 
 
-    float average = 0;
-    float partsAverage = 0;
+	int sum = 0;
 
-    for(int i=0; i<show[0].size();i++){
+	for(int i=0; i<show[0].size();i++){
 
-        average += getSceneAwesomeness(show[0][i]);
-
-    }
-    average = average / ((m - 1) * k);
-
+		sum += getSceneAwesomeness(show[0][i]);
+	}
+	
+	float average = sum / ((m - 1.0) * k);
 	return average;
 }
 
@@ -206,13 +201,29 @@ void sortAnimals() {
  */
 void sortScenes() {
 
-	for(int i=0; i<m; i++){
+	for(int i=0; i<m; i++) {
 
-		vector<vector<string>> part = show[m];
-		vector<vector<int>> sortedIndexes;
-		//for(int j=0; j<part.size(); j++){
+		vector<vector<string>> part = show[i];
+		vector<int> sortedIndexes[3*n-3];
+
+		for(int j=0; j<part.size(); j++) {
+
+			vector<string> scene = part[j];
+			int awesomeness = getSceneAwesomeness(scene);
+			sortedIndexes[awesomeness].push_back(j);
+		}
+
+		string test = "";
+		for(int j=0; j<3*n-3; j++) {
+
+			vector<int> sceneIterators = sortedIndexes[j];
+			for(int l=0; l<sceneIterators.size(); l++) {
 				
-		//}
+				test += to_string(sceneIterators[l]) + " ";
+			}
+			
+		}
+		cout << test << endl;
 	}
 }
 
@@ -239,7 +250,7 @@ int main() {
 	cout << "sort animals" << endl;
 	sortAnimals();
 	cout << "sort scenes" << endl;
-	//sortScenes();
+	sortScenes();
 	cout << "sort parts" << endl;
 	sortParts();
 
@@ -270,9 +281,6 @@ int main() {
 		cout << endl;
 	}
 
-
-    cout << fixed << showpoint;
-    cout << setprecision(2);
-    cout << "El promedio de grandeza de todo el espectaculo fue de " << getShowAverageAwesomeness();
+	cout << "El promedio de grandeza de todo el espectaculo fue de " << fixed << setprecision(2) << getShowAverageAwesomeness() << endl;
 	return 0;
 }
