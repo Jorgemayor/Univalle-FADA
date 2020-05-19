@@ -17,7 +17,7 @@ Tigre Loro Capibara
 León Caimán Loro
 León Cocodrilo Boa
 León PanteraNegra Cebra
-Tigra Cebra PanteraNegra
+Tigre Cebra PanteraNegra
 
 Caimán Capibara Loro
 Tigre Loro Capibara
