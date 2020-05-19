@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include <map>
+#include <unordered_map>
 #include <vector>
 #include <stdlib.h>
 #include <string.h>
@@ -10,8 +11,8 @@ using namespace std;
 int n, m, k;
 vector<vector<vector<string>>> show;
 map<vector<string>, vector<string>> sortedScenes;
-map<vector<string>, int> scenesAwesomeness;
-map<string, int> animals;
+//unordered_map<vector<string>, int> scenesAwesomeness;
+unordered_map<string, int> animals;
 
 /**
  * Reads the input related to the animals from an
@@ -178,7 +179,7 @@ void sortAnimals() {
 				sortedScenes[scene] = show[i][j];
 			}
 
-			scenesAwesomeness[show[i][j]] = awesomenessFirstAnimal + awesomenessSecondAnimal + awesomenessThirdAnimal;
+			//scenesAwesomeness[show[i][j]] = awesomenessFirstAnimal + awesomenessSecondAnimal + awesomenessThirdAnimal;
 		}
 	}
 }
@@ -189,7 +190,14 @@ void sortAnimals() {
  */
 void sortScenes() {
 
-	//ToDo
+	for(int i=0; i<m; i++){
+
+		vector<vector<string>> part = show[m];
+		vector<vector<int>> sortedIndexes;
+		//for(int j=0; j<part.size(); j++){
+				
+		//}
+	}
 }
 
 /**
@@ -212,8 +220,11 @@ int main() {
 	file >> n >> m >> k;
 	setAnimals(file);
 	setShow(file);
+	cout << "sort animals" << endl;
 	sortAnimals();
-	sortScenes();
+	cout << "sort scenes" << endl;
+	//sortScenes();
+	cout << "sort parts" << endl;
 	sortParts();
 
 	//Pruebas
