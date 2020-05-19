@@ -2,7 +2,6 @@
 #include <string.h>
 #include <iomanip> 
 #include <map>
-#include <unordered_map>
 #include <vector>
 #include <stdlib.h>
 #include <string.h>
@@ -12,8 +11,8 @@ using namespace std;
 int n, m, k;
 vector<vector<vector<string>>> show;
 map<vector<string>, vector<string>> sortedScenes;
-//unordered_map<vector<string>, int> scenesAwesomeness;
-unordered_map<string, int> animals;
+map<vector<string>, int> scenesAwesomeness;
+map<string, int> animals;
 
 /**
  * Reads the input related to the animals from an
@@ -190,7 +189,7 @@ void sortAnimals() {
 				sortedScenes[scene] = show[i][j];
 			}
 
-			//scenesAwesomeness[show[i][j]] = awesomenessFirstAnimal + awesomenessSecondAnimal + awesomenessThirdAnimal;
+			scenesAwesomeness[show[i][j]] = awesomenessFirstAnimal + awesomenessSecondAnimal + awesomenessThirdAnimal;
 		}
 	}
 }
