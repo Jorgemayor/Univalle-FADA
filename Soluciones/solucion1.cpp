@@ -110,16 +110,32 @@ int getPartAwesomeness(vector<vector<string>> part){
 }
 
 /**
- * Gets the awesomeness of the show
+ * Gets the average awesomeness of the show
  * 
- * @return result int --> Value of the awesomeness of
- * the part.
+ * @return average int --> Value of the average awesomeness of
+ * the show.
  */
-int getShowAwesomeness(){
 
-	//ToDo
-	return 0;
+
+
+
+float getShowAverageAwesomeness(){
+
+
+    float average = 0;
+    float partsAverage = 0;
+
+    for(int i=0; i<show[0].size();i++){
+
+        average += getSceneAwesomeness(show[0][i]);
+
+    }
+    average = average / ((m - 1) * k);
+
+	return average;
 }
+
+
 
 /**
  * Sorts the animals of each scene of each part of the show.
@@ -215,7 +231,7 @@ void sortParts() {
  */
 int main() {
 	
-	string testCase = "prueba3";
+	string testCase = "prueba2";
 	ifstream file ("../Pruebas/" + testCase + ".txt");
 	file >> n >> m >> k;
 	setAnimals(file);
@@ -254,5 +270,9 @@ int main() {
 		cout << endl;
 	}
 
+
+    cout << fixed << showpoint;
+    cout << setprecision(2);
+    cout << "El promedio de grandeza de todo el espectaculo fue de " << getShowAverageAwesomeness();
 	return 0;
 }
