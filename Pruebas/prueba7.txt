@@ -1,4 +1,4 @@
-70 7 8
+70 7 5
 AbejaMelífera 1
 AbejarucoEsmeralda 2
 Abejorro 3
@@ -22,7 +22,7 @@ Avoceta 20
 Águila 21
 BabosaDeMar 22
 Babuino 23
-Ballena azul 24
+BallenaAzul 24
 Barbo 25
 Barracuda 26
 Bisonte 27
@@ -32,7 +32,7 @@ BusardoRatonero 30
 Búfalo 31
 BúhoChico 32
 BúhoNival 33
-Caballito de mar 34
+CaballitoDeMar 34
 Caballo 35
 Cabra 36
 CachaloteComún 37
@@ -69,3 +69,70 @@ Cobaya 67
 CochinillaDeLaHumedad 68
 Cocodrilo 69
 CodornizComún 70
+
+CoatíDeColaAnillada Castor Caimán
+AnguilaEléctrica AvispónAsiáticoGigante BallenaAzul
+AlmejaGigante BusardoRatonero Avoceta 
+BúhoNival CaballitoDeMar BabosaDeMar
+Armadillo AcaraAzulEléctrico AbejarucoEsmeralda
+AbejaMelífera AveDelParaíso Ascidias
+AnguilaMorena Bisonte Águila
+Ardilla Antílope Barracuda
+BúhoChico Barbo Avestruz
+Ajolote Búfalo Buitre
+Burro Babuino Armiño
+Chinchilla CivetaDeLasPalmerasComún CochinillaDeLaHumedad
+CerdoHormiguero CivetaAfricana Cocodrilo
+CodornizComún CetiaJaponés Ciempiés
+CivetaMalaya Cobaya Chacal
+Casuario Camello CangrejoHerradura
+CachaloteComún Chimpancé Caracol
+Camaleón Cerdo Cebra
+Cigüeña Capibara Cangrejo
+Calamar Camarón Caballo
+Ciervo Cisne Cebú
+Cabra Canguro Caracal
+Abejorro Albatros Avispa
+Alce BallenaAzul AbejarucoEsmeralda
+AbejarucoEsmeralda Abejorro Alce
+BallenaAzul Barbo BusardoRatonero
+CaballitoDeMar Caballo Cabra
+AbejarucoEsmeralda AcaraAzulEléctrico AnguilaEléctrica
+BúhoNival CaballitoDeMar AbejaMelífera
+AlmejaGigante BusardoRatonero CochinillaDeLaHumedad
+
+Ajolote Búfalo Buitre
+Casuario Camello CangrejoHerradura
+BallenaAzul Barbo BusardoRatonero
+AbejarucoEsmeralda AcaraAzulEléctrico AnguilaEléctrica
+Chinchilla CivetaDeLasPalmerasComún CochinillaDeLaHumedad
+
+Armadillo AcaraAzulEléctrico AbejarucoEsmeralda
+AlmejaGigante BusardoRatonero CochinillaDeLaHumedad
+Cigüeña Capibara Cangrejo
+Alce BallenaAzul AbejarucoEsmeralda
+CodornizComún CetiaJaponés Ciempiés
+
+AnguilaEléctrica AvispónAsiáticoGigante BallenaAzul
+CerdoHormiguero CivetaAfricana Cocodrilo
+BúhoNival CaballitoDeMar AbejaMelífera
+AbejarucoEsmeralda Abejorro Alce
+AbejaMelífera AveDelParaíso Ascidias
+
+Calamar Camarón 
+CaballitoDeMar Caballo Cabra
+AnguilaMorena Bisonte Águila
+CachaloteComún Chimpancé Caracol
+Abejorro Albatros Avispa
+
+Cabra Canguro Caracal
+Camaleón Cerdo Cebra
+Ciervo Cisne Cebú
+CivetaMalaya Cobaya Chacal
+Burro Babuino Armiño
+
+Ardilla Antílope Barracuda
+BúhoChico Barbo Avestruz
+AlmejaGigante BusardoRatonero Avoceta 
+BúhoNival CaballitoDeMar BabosaDeMar
+CoatíDeColaAnillada Castor Caimán

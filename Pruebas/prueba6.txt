@@ -1,102 +1,100 @@
-100 5 11
+50 10 2
 AbejaMelífera 1
-AbejarucoEsmeralda 2
-Abejorro 3
-AcaraAzulEléctrico 4
-Ajolote 5
-Albatros 6
-Alce 7
-AlmejaGigante 8
-AnguilaEléctrica 9
-AnguilaMorena 10
-Antílope 11
-Ardilla 12
-Armadillo 13
-Armiño 14
-Ascidias 15
-AveDelParaíso 16
-Avestruz 17
-Avispa 18
-AvispónAsiáticoGigante 19
-Avoceta 20
-Águila 21
-BabosaDeMar 22
-Babuino 23
-Ballena azul 24
-Barbo 25
-Barracuda 26
-Bisonte 27
-Buitre 28
-Burro 29
-BusardoRatonero 30
-Búfalo 31
-BúhoChico 32
-BúhoNival 33
-Caballito de mar 34
-Caballo 35
-Cabra 36
-CachaloteComún 37
-Caimán 38
-Calamar 39
-Camaleón 40
-Camarón 41
-Camello 42
-Cangrejo 43
-CangrejoHerradura 44
-Canguro 45
-Capibara 46
-Caracal 47
-Caracol 48
-Castor 49
-Casuario 50
-Cebra 51
-Cebú 52
-Cerdo 53
-CerdoHormiguero 54
-CetiaJaponés 55
-Chacal 56
-Chimpancé 57
-Chinchilla 58
-Ciempiés 59
-Ciervo 60
-Cigüeña 61
-Cisne 62
-CivetaAfricana 63
-CivetaDeLasPalmerasComún 64
-CivetaMalaya 65
-CoatíDeColaAnillada 66
-Cobaya 67
-CochinillaDeLaHumedad 68
-Cocodrilo 69
-CodornizComún 70
-Colibrí 71
-ColimboGrande 72
-Comadreja 73
-Conejo 74
-Coral 75
-Coyote 76
-Cucaracha 77
-CáraboComún 78
-Cíclido 79
-Delfín 80
-DemonioDeTasmania 81
-DientesDeSable 82
-Dingo 83
-Dodo 84
-DragónDeAguaAsiático 85
-DragónDeAguaAustraliano 86
-DragónDeKomodo 87
-DragónDeMarFoliáceo 88
-Dugongo 89
-DólarDePlata 90
-Elefante 91
-EmperadorPúrpura 92
-EmúComún 93
-Erizo 94
-ErizoDeMar 95
-Escarabajo 96
-Escorpión 97
-EsponjasDeMar 98
-EspátulaRosada 99
-Zorro 100
+AbejarucoEsmeralda 29
+Abejorro 30
+AcaraAzulEléctrico 10
+Ajolote 31
+Albatros 32
+Alce 27
+AlmejaGigante 26
+AnguilaEléctrica 8
+AnguilaMorena 33
+Antílope 4
+Ardilla 34
+Armadillo 6
+Armiño 38
+Ascidias 24
+AveDelParaíso 39
+Avestruz 49
+Avispa 48
+AvispónAsiáticoGigante 7
+Avoceta 2
+Águila 35
+BabosaDeMar 36
+Babuino 25
+BallenaAzul 28
+Barbo 37
+Barracuda 3
+Bisonte 47
+Buitre 9
+Burro 46
+BusardoRatonero 5
+Búfalo 17
+BúhoChico 18
+BúhoNival 45
+CaballitoDeMar 13
+Caballo 22
+Cabra 23
+CachaloteComún 12
+Caimán 44
+Calamar 14
+Camaleón 50
+Camarón 19
+Camello 41
+Cangrejo 40
+CangrejoHerradura 11
+Canguro 21
+Capibara 20
+Caracal 42
+Caracol 15
+Castor 43
+Casuario 16
+
+BúhoNival BabosaDeMar CangrejoHerradura
+CachaloteComún Capibara BallenaAzul
+AvispónAsiáticoGigante AveDelParaíso Cangrejo
+BusardoRatonero Calamar Canguro
+Barracuda Buitre Camarón
+CaballitoDeMar BúhoChico Babuino
+Caracol Caracal Casuario
+Castor Caballo Camaleón
+Avoceta Avestruz Búfalo 
+Camello Caimán Cabra
+Bisonte Burro Águila
+Barbo Avispa Ascidias
+AcaraAzulEléctrico AlmejaGigante AnguilaMorena
+Armadillo Armiño AnguilaEléctrica
+AbejarucoEsmeralda AbejaMelífera Albatros
+Antílope Ardilla Abejorro
+Ajolote Alce Castor
+AlmejaGigante Búfalo Caballo
+
+Avoceta Avestruz Búfalo 
+AbejarucoEsmeralda AbejaMelífera Albatros
+
+AlmejaGigante Búfalo Caballo
+AcaraAzulEléctrico AlmejaGigante AnguilaMorena
+
+BusardoRatonero Calamar Canguro
+AvispónAsiáticoGigante AveDelParaíso Cangrejo
+
+Armadillo Armiño AnguilaEléctrica
+CaballitoDeMar BúhoChico Babuino
+
+Antílope Ardilla Abejorro
+BúhoNival BabosaDeMar CangrejoHerradura
+
+Bisonte Burro Águila
+Caracol Caracal Casuario
+
+Castor Caballo Camaleón
+CachaloteComún Capibara BallenaAzul
+
+Camello Caimán Cabra
+Barracuda Buitre Camarón
+
+Barbo Avispa Ascidias
+Ajolote Alce Castor
+
+
 

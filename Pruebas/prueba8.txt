@@ -1,4 +1,4 @@
-264 25 10
+264 23 4
 AbejaMelífera 1
 AbejarucoEsmeralda 2
 Abejorro 3
@@ -22,7 +22,7 @@ Avoceta 20
 Águila 21
 BabosaDeMar 22
 Babuino 23
-Ballena azul 24
+BallenaAzul 24
 Barbo 25
 Barracuda 26
 Bisonte 27
@@ -32,7 +32,7 @@ BusardoRatonero 30
 Búfalo 31
 BúhoChico 32
 BúhoNival 33
-Caballito de mar 34
+CaballitoDeMar 34
 Caballo 35
 Cabra 36
 CachaloteComún 37
@@ -76,7 +76,7 @@ Conejo 74
 Coral 75
 Coyote 76
 Cucaracha 77
-Cárabo común 78
+CáraboComún 78
 Cíclido 79
 Delfín 80
 DemonioDeTasmania 81
@@ -263,3 +263,202 @@ Zapatero 261
 Zarigüeya 262
 Zorro 263
 ZorroPolar 264
+
+SapoComún Tortuga Rinoceronte
+Zarigüeya SerHumano Rorcual
+VacaMarinaDeSteller Guppy CaballitoDeMar
+Burro Ajolote Pato
+RanaAfricanaDeUñas PezÁngel Pavo
+RanaEuropeaComún Polilla RanaDardoVenenosa
+Chinchilla AnguilaMorena AvispónAsiáticoGigante 
+Molly Nutria PezGato
+Caimán CangrejoHerradura Ciempiés
+Antílope AbejarucoEsmeralda Leopardo
+Mangosta Cisne Gorila 
+Iguana FrailecilloComún Cobaya
+CodornizComún Armiño GallinaDeGuinea
+GallinetaComún Coyote CerdoHormiguero
+Llama LuchadorDeSiam MoscaComún
+Percebe Saltamontes SapoDeVientreDeFuego
+YararáComún Serpiente Ruiseñor
+Mapache Luciérnaga Lémur
+Milpiés LeónMarino Escorpión
+FacóqueroComún Caracol AlmejaGigante
+PájaroCarpintero RanaVerdeCentroeuropea Calamar
+CivetaDeLasPalmerasComún Canguro CachaloteComún
+BabosaDeMar AnguilaEléctrica Hámster
+Guacamayo Hipopótamo CoatíDeColaAnillada
+DemonioDeTasmania CochinillaDeLaHumedad BusardoRatonero
+LagartoCaimánDelNorte LechuzaComún Jabalí
+RanaCoheteRayada TucánPicoIris SulaPatiazul
+DragónDeAguaAsiático Colibrí DragónDeAguaAustraliano
+Delfín Cocodrilo AveDelParaíso
+BallenaAzul PeriquitoComún RanitaMonteIberia
+AcaraAzulEléctrico DragónDeMarFoliáceo GatoDoméstico
+MurciélagoVampiro PanteraNegra DientesDeSable
+EmperadorPúrpura CetiaJaponés TiburónMielga
+Suricato EsponjasDeMar Avoceta
+SapoAfricano Xifóforo CivetaAfricana
+CivetaMalaya Armadillo RanaDeDarwin
+Gorrión Jirafa ColimboGrande
+BúhoChico Avestruz Kakapo
+SapoPataDePala UrracaComún Zorro
+Barracuda Camaleón Capibara
+Camarón Casuario Mantarraya
+Cucaracha RanaArbóreas PezLeón
+PezCirujano Chacal Búfalo
+Oropéndola Puercoespín Mandril
+MirloComún RanaComestible ViudaNegra
+DragónDeKomodo AbejaMelífera RanaExcavadora
+PezMariposa Guepardo Comadreja
+Ascidias Bisonte PezPayaso
+Tiburón Zapatero ZorroPolar
+Conejo EmúComún ErizoDeMar
+Albatros BúhoNival MartínPescador
+Ornitorrinco Mariposa DólarDePlata
+EspátulaRosada Alce Termita 
+Faisán Gecko Camello
+Caracal Ardilla Salamandra
+CáraboComún Dingo SapoDeCaña
+Avispa Musaraña Murciélago
+Peramélido Oso Topo
+FocaComún Flamenco Castor
+Águila Caballo Babuino
+Morsa Orangután Coral
+Cigüeña Cebú Chimpancé
+Abejorro Barbo RatónComún
+Wombat Tejón EstrellaDeMar
+Gamba Buitre Pelícano
+Perezoso PezGlobo RanaToro
+Raya Pingüino Tucán
+Vaca Cabra Cangrejo
+Cebra Ciervo Labridae
+Libélula Lince Manatí
+PezDisco Koala Cerdo
+Cíclido Proteo Reno
+Tigre Sepia Rata
+Pollo Pulpo Quetzal
+Puma Perro Piraña
+Mula Orca Oveja
+Mariquita Liebre Garza
+Dodo Dugongo Elefante
+Erizo Escarabajo Fregata
+Faetón Ganso Ostra
+Numbat Ocelote Oruga
+Medusa Mofeta Mono
+Lobo Loro Lucio
+Gavial Glotón Grulla
+Hormiga Lagarto Langosta
+León Jaguar Hurón
+Halcón Hiena Impala
+Indri Kiwi Ibis
+
+Libélula Lince Manatí
+Morsa Orangután Coral
+Avispa Musaraña Murciélago
+Faisán Gecko Camello
+
+LagartoCaimánDelNorte LechuzaComún Jabalí
+Chinchilla AnguilaMorena AvispónAsiáticoGigante
+GallinetaComún Coyote CerdoHormiguero
+CivetaMalaya Armadillo RanaDeDarwin
+
+MirloComún RanaComestible ViudaNegra
+Conejo EmúComún ErizoDeMar
+AcaraAzulEléctrico DragónDeMarFoliáceo GatoDoméstico
+PájaroCarpintero RanaVerdeCentroeuropea Calamar
+
+YararáComún Serpiente Ruiseñor
+Guacamayo Hipopótamo CoatíDeColaAnillada
+DragónDeAguaAsiático Colibrí DragónDeAguaAustraliano
+Antílope AbejarucoEsmeralda Leopardo
+
+Gamba Buitre Pelícano
+Mula Orca Oveja
+Erizo Escarabajo Fregata
+Tigre Sepia Rata
+
+Vaca Cabra Cangrejo
+FocaComún Flamenco Castor
+Abejorro Barbo RatónComún
+PezMariposa Guepardo Comadreja
+
+Barracuda Camaleón Capibara
+Cucaracha RanaArbóreas PezLeón
+EmperadorPúrpura CetiaJaponés TiburónMielga
+BallenaAzul PeriquitoComún RanitaMonteIberia
+
+Ornitorrinco Mariposa DólarDePlata
+Lobo Loro Lucio
+Perezoso PezGlobo RanaToro
+Cíclido Proteo Reno
+
+CivetaDeLasPalmerasComún Canguro CachaloteComún
+MurciélagoVampiro PanteraNegra DientesDeSable
+BúhoChico Avestruz Kakapo
+Milpiés LeónMarino Escorpión
+
+VacaMarinaDeSteller Guppy CaballitoDeMar
+RanaCoheteRayada TucánPicoIris SulaPatiazul
+SapoComún Tortuga Rinoceronte
+SapoAfricano Xifóforo CivetaAfricana
+
+Iguana FrailecilloComún Cobaya
+DemonioDeTasmania CochinillaDeLaHumedad BusardoRatonero
+RanaAfricanaDeUñas PezÁngel Pavo
+DragónDeKomodo AbejaMelífera RanaExcavadora
+
+Caracal Ardilla Salamandra
+PezCirujano Chacal Búfalo
+Percebe Saltamontes SapoDeVientreDeFuego
+Caimán CangrejoHerradura Ciempiés
+
+FacóqueroComún Caracol AlmejaGigante
+Delfín Cocodrilo AveDelParaíso
+CodornizComún Armiño GallinaDeGuinea
+RanaEuropeaComún Polilla RanaDardoVenenosa
+
+Águila Caballo Babuino
+Tiburón Zapatero ZorroPolar
+Mariquita Liebre Garza
+Raya Pingüino Tucán
+
+Hormiga Lagarto Langosta
+Halcón Hiena Impala
+Numbat Ocelote Oruga
+Gorrión Jirafa ColimboGrande
+
+Molly Nutria PezGato
+Zarigüeya SerHumano Rorcual
+Suricato EsponjasDeMar Avoceta
+BabosaDeMar AnguilaEléctrica Hámster
+
+Burro Ajolote Pato
+Mangosta Cisne Gorila 
+Llama LuchadorDeSiam MoscaComún
+Mapache Luciérnaga Lémur
+
+CáraboComún Dingo SapoDeCaña
+PezDisco Koala Cerdo
+Puma Perro Piraña
+Wombat Tejón EstrellaDeMar
+
+Albatros BúhoNival MartínPescador
+Peramélido Oso Topo
+Ascidias Bisonte PezPayaso
+SapoPataDePala UrracaComún Zorro
+
+Camarón Casuario Mantarraya
+Oropéndola Puercoespín Mandril
+Medusa Mofeta Mono
+Gavial Glotón Grulla
+
+Dodo Dugongo Elefante
+León Jaguar Hurón
+Indri Kiwi Ibis
+EspátulaRosada Alce Termita
+
+Cigüeña Cebú Chimpancé
+Cebra Ciervo Labridae
+Pollo Pulpo Quetzal
+Faetón Ganso Ostra
