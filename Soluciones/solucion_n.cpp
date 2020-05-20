@@ -165,11 +165,9 @@ void sortAnimals() {
 void sortScenes() {
 
 	for(int i=0; i<m; i++) {
-
-		cout << "Part " << i << endl;
 		
 		vector<vector<string>> part = show[i];
-		vector<int> sortedIndexes[3*n-3];
+		vector<int> sortedIndexes[3*n-2];
 
 		for(int j=0; j<part.size(); j++) {
 
@@ -179,20 +177,15 @@ void sortScenes() {
 		}
 		
 		vector<vector<string>> sortedPart;
-		for(int j=0; j<3*n-3; j++) {
+		for(int j=6; j<3*n-3; j++) {
 			
 			vector<int> scenesWithEqualAwesomeness = sortedIndexes[j];
-			
-			cout << "Scene with " << j << " of awesomeness: " << scenesWithEqualAwesomeness.size() << endl;
 
 			for(int l=0; l<scenesWithEqualAwesomeness.size(); l++) {
-				cout << "	It of scenes with equal awesomeness: " << scenesWithEqualAwesomeness[l] << endl;
 				sortedPart.push_back(part[scenesWithEqualAwesomeness[l]]);
 			}	
 		}
 		show[i] = sortedPart;
-
-		cout << endl;
 	}
 }
 
@@ -203,15 +196,39 @@ void sortScenes() {
 void sortParts() {
 
 	int partAwesomeness[m];
-		
-	for(int i=0; i<m; i++) {
+	int biggestPartAwesomeness = 0;
 
-		partAwesomeness[i] = getPartAwesomeness(show[i]);
-		showAwesomeness += partAwesomeness[i];
-		cout << partAwesomeness[i] << endl;
+	for(int i=0; i<m; i++) {
+		
+		int awesomeness = getPartAwesomeness(show[i]);
+		partAwesomeness[i] = awesomeness;
+		showAwesomeness += awesomeness;
+		biggestPartAwesomeness = (awesomeness>biggestPartAwesomeness)?awesomeness:biggestPartAwesomeness;
 	}
 
-	cout << "showA " << showAwesomeness << endl;
+	vector<int> sortedIndexes[biggestPartAwesomeness+1];
+
+	for(int i=1; i<m; i++) {
+		
+		vector<vector<string>> part = show[i];
+		int awesomeness = partAwesomeness[i];
+
+		sortedIndexes[awesomeness].push_back(i);
+	}
+
+	vector<vector<vector<string>>> sortedShow;
+	sortedShow.push_back(show[0]);
+
+	for(int i=6; i<biggestPartAwesomeness; i++) {
+		
+		vector<int> partsWithEqualAwesomeness = sortedIndexes[i];
+
+		for(int j=0; j<partsWithEqualAwesomeness.size(); j++) {
+			sortedShow.push_back(show[partsWithEqualAwesomeness[j]]);
+		}	
+	}
+
+	show = sortedShow;
 }
 
 /**
@@ -225,11 +242,8 @@ int main() {
 	file >> n >> m >> k;
 	setAnimals(file);
 	setShow(file);
-	cout << "sort animals" << endl;
 	sortAnimals();
-	cout << "sort scenes" << endl;
 	sortScenes();
-	cout << "sort parts" << endl;
 	sortParts();
 
 	//Pruebas
