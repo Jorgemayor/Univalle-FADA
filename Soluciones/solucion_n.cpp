@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include <iomanip>
+#include <algorithm>
 #include <unordered_map>
 #include <vector>
 #include <stdlib.h>
@@ -11,6 +12,7 @@ using namespace std;
 int n, m, k;
 vector<vector<vector<string>>> show;
 unordered_map<string, int> animals;
+unordered_map<string, int> animalParticipations;
 int showAwesomeness = 0;
 
 /**
@@ -46,10 +48,13 @@ void setShow(ifstream & file){
 
 		file>>animal;
 		scene.push_back(animal);
+		animalParticipations[animal]++;
 		file>>animal;
 		scene.push_back(animal);
+		animalParticipations[animal]++;
 		file>>animal;
 		scene.push_back(animal);
+		animalParticipations[animal]++;
 
 		part.push_back(scene);
 	}
@@ -64,10 +69,13 @@ void setShow(ifstream & file){
 			
 			file>>animal;
 			scene.push_back(animal);
+			animalParticipations[animal]++;
 			file>>animal;
 			scene.push_back(animal);
+			animalParticipations[animal]++;
 			file>>animal;
 			scene.push_back(animal);
+			animalParticipations[animal]++;
 
 			part.push_back(scene);
 		}
@@ -247,10 +255,6 @@ int main() {
 	sortParts();
 
 	//Pruebas
-	
-	cout << "test animals " << animals["Mariposa"] << endl;
-
-	cout << endl << "test show" << endl;
 
 	cout << endl << "Apertura" << endl;
 
@@ -273,6 +277,77 @@ int main() {
 		cout << endl;
 	}
 
+	unordered_map<string, int>::iterator it = animalParticipations.begin();
+	int biggestQuantityParticipations = 0;
+	int smallestQuantityParticipations = (m - 1) * 2 * k;
+	vector<string> popularAnimals;
+	vector<string> unpopularAnimals;
+
+	while (it != animalParticipations.end())
+	{
+
+		int participations = it->second;
+
+		if(participations > biggestQuantityParticipations) {
+			biggestQuantityParticipations = participations;
+			popularAnimals.clear();
+			popularAnimals.push_back(it->first);
+
+		} else if(participations == biggestQuantityParticipations) {
+			popularAnimals.push_back(it->first);
+		}
+
+		if(participations < smallestQuantityParticipations) {
+			smallestQuantityParticipations = participations;
+			unpopularAnimals.clear();
+			unpopularAnimals.push_back(it->first);
+
+		} else if(participations == smallestQuantityParticipations) {
+			unpopularAnimals.push_back(it->first);
+		}
+
+		it++;
+	}
+
+	int participations = popularAnimals.size();
+	bool plural = participations > 1;
+
+	if(plural) {
+
+		string message = "";
+		message += popularAnimals[0];
+		int i = 1;
+		
+		for(i; i<participations - 1; i++) {
+			message += ", " + popularAnimals[i];
+		}
+		message += " y " + popularAnimals[i];
+		
+		cout << "Los animales que más participaron fueron: " + message + " con " + to_string(participations) + " participaciones." << endl;
+	} else {
+		cout << "El animal que más participó fue: " + popularAnimals[0] + " con 1 participación." << endl;
+	}
+
+	participations = unpopularAnimals.size();
+	plural = participations > 1;
+
+	if(plural) {
+
+		string message = "";
+		message += unpopularAnimals[0];
+		int i = 1;
+		
+		for(i; i<participations - 1; i++) {
+			message += ", " + unpopularAnimals[i];
+		}
+		message += " y " + unpopularAnimals[i];
+		
+		cout << "Los animales que menos participaron fueron: " + message + " con " + to_string(participations) + " participaciones." << endl;
+	} else {
+		
+		cout << "El animal que más participó fue: " + unpopularAnimals[0] + " con 1 participación." << endl;
+	}
+	
 	cout << "El promedio de grandeza de todo el espectaculo fue de " << fixed << setprecision(2) << showAwesomeness / ((m - 1.0) * k * 2) << endl;
 	return 0;
 }
