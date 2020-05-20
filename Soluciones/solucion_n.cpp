@@ -245,7 +245,7 @@ void sortParts() {
  */
 int main() {
 	
-	string testCase = "prueba2";
+	string testCase = "prueba1";
 	ifstream file ("../Pruebas/" + testCase + ".txt");
 	file >> n >> m >> k;
 	setAnimals(file);
@@ -309,8 +309,8 @@ int main() {
 		it++;
 	}
 
-	int participations = popularAnimals.size();
-	bool plural = participations > 1;
+	int numberOfAnimals = popularAnimals.size();
+	bool plural = numberOfAnimals > 1;
 
 	if(plural) {
 
@@ -318,18 +318,18 @@ int main() {
 		message += popularAnimals[0];
 		int i = 1;
 		
-		for(i; i<participations - 1; i++) {
+		for(i; i<numberOfAnimals - 1; i++) {
 			message += ", " + popularAnimals[i];
 		}
 		message += " y " + popularAnimals[i];
 		
-		cout << "Los animales que más participaron fueron: " + message + " con " + to_string(participations) + " participaciones." << endl;
+		cout << "Los animales que más participaron fueron: " + message + " con " + to_string(biggestQuantityParticipations) + " participaciones." << endl;
 	} else {
-		cout << "El animal que más participó fue: " + popularAnimals[0] + " con 1 participación." << endl;
+		cout << "El animal que más participó fue: " + popularAnimals[0] + " con " + to_string(biggestQuantityParticipations) + " participaciones." << endl;
 	}
 
-	participations = unpopularAnimals.size();
-	plural = participations > 1;
+	numberOfAnimals = unpopularAnimals.size();
+	plural = numberOfAnimals > 1;
 
 	if(plural) {
 
@@ -337,15 +337,15 @@ int main() {
 		message += unpopularAnimals[0];
 		int i = 1;
 		
-		for(i; i<participations - 1; i++) {
+		for(i; i<numberOfAnimals - 1; i++) {
 			message += ", " + unpopularAnimals[i];
 		}
 		message += " y " + unpopularAnimals[i];
 		
-		cout << "Los animales que menos participaron fueron: " + message + " con " + to_string(participations) + " participaciones." << endl;
+		cout << "Los animales que menos participaron fueron: " + message + " con " + to_string(smallestQuantityParticipations) + " participaciones." << endl;
 	} else {
 		
-		cout << "El animal que más participó fue: " + unpopularAnimals[0] + " con 1 participación." << endl;
+		cout << "El animal que más participó fue: " + unpopularAnimals[0] + " con " + to_string(smallestQuantityParticipations) + " participaciones." << endl;
 	}
 	
 	cout << "El promedio de grandeza de todo el espectaculo fue de " << fixed << setprecision(2) << showAwesomeness / ((m - 1.0) * k * 2) << endl;
