@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string.h>
-#include <iomanip> 
+#include <iomanip>
 #include <map>
 #include <vector>
+#include <unordered_map>
 #include <stdlib.h>
 #include <string.h>
 #include <fstream>
@@ -12,7 +13,7 @@ int n, m, k;
 vector<vector<vector<string>>> show;
 map<vector<string>, vector<string>> sortedScenes;
 map<vector<string>, int> scenesAwesomeness;
-map<string, int> animals;
+unordered_map<string, int> animals;
 
 /**
  * Reads the input related to the animals from an
@@ -21,13 +22,13 @@ map<string, int> animals;
  * @param file ifstream --> Test case file.
  */
 void setAnimals(ifstream & file) {
-	
-	string name;
-	int awesomeness;
-	for(int i=0; i<n; i++){
-		file >> name >> awesomeness;
-		animals[name] = awesomeness;
-	}
+
+    string name;
+    int awesomeness;
+    for(int i=0; i<n; i++){
+        file >> name >> awesomeness;
+        animals[name] = awesomeness;
+    }
 }
 
 /**
@@ -37,43 +38,43 @@ void setAnimals(ifstream & file) {
  * @param file ifstream --> Test case file.
  */
 void setShow(ifstream & file){
-	
-	vector<vector<string>> part;
-	vector<string> scene;
-	string animal;
 
-	for(int i=0; i<k*(m-1); i++){
-		scene.clear();
+    vector<vector<string>> part;
+    vector<string> scene;
+    string animal;
 
-		file>>animal;
-		scene.push_back(animal);
-		file>>animal;
-		scene.push_back(animal);
-		file>>animal;
-		scene.push_back(animal);
+    for(int i=0; i<k*(m-1); i++){
+        scene.clear();
 
-		part.push_back(scene);
-	}
+        file>>animal;
+        scene.push_back(animal);
+        file>>animal;
+        scene.push_back(animal);
+        file>>animal;
+        scene.push_back(animal);
 
-	show.push_back(part);
-	
-	for(int i=1; i<m; i++){
-		part.clear();
-		
-		for(int j=0; j<k; j++){
-			scene.clear();
-			
-			file>>animal;
-			scene.push_back(animal);
-			file>>animal;
-			scene.push_back(animal);
-			file>>animal;
-			scene.push_back(animal);
+        part.push_back(scene);
+    }
 
-			part.push_back(scene);
-		}
-		show.push_back(part);
-	}
+    show.push_back(part);
+
+    for(int i=1; i<m; i++){
+        part.clear();
+
+        for(int j=0; j<k; j++){
+            scene.clear();
+
+            file>>animal;
+            scene.push_back(animal);
+            file>>animal;
+            scene.push_back(animal);
+            file>>animal;
+            scene.push_back(animal);
+
+            part.push_back(scene);
+        }
+        show.push_back(part);
+    }
 }
 
 /**
@@ -86,9 +87,9 @@ void setShow(ifstream & file){
  */
 int getSceneAwesomeness(vector<string> scene){
 
-	int result = animals[scene[0]] + animals[scene[1]] + animals[scene[2]];
+    int result = animals[scene[0]] + animals[scene[1]] + animals[scene[2]];
 
-	return result;
+    return result;
 }
 
 /**
@@ -101,12 +102,12 @@ int getSceneAwesomeness(vector<string> scene){
  */
 int getPartAwesomeness(vector<vector<string>> part){
 
-	int result = 0;
-    
-	for(int i=0; i<part.size(); i++)
-		result += getSceneAwesomeness(part[i]);
-	
-	return result;
+    int result = 0;
+
+    for(int i=0; i<part.size(); i++)
+        result += getSceneAwesomeness(part[i]);
+
+    return result;
 }
 
 /**
@@ -118,15 +119,15 @@ int getPartAwesomeness(vector<vector<string>> part){
 float getShowAverageAwesomeness(){
 
 
-	int sum = 0;
+    int sum = 0;
 
-	for(int i=0; i<show[0].size();i++){
+    for(int i=0; i<show[0].size();i++){
 
-		sum += getSceneAwesomeness(show[0][i]);
-	}
-	
-	float average = sum / ((m - 1.0) * k);
-	return average;
+        sum += getSceneAwesomeness(show[0][i]);
+    }
+
+    float average = sum / ((m - 1.0) * k);
+    return average;
 }
 
 
@@ -136,103 +137,103 @@ float getShowAverageAwesomeness(){
  * 
  */
 void sortAnimals() {
-	
-	vector<vector<string>> part;
-	vector<string> scene;
 
-	for(int i=0; i<m; i++) {
+    vector<vector<string>> part;
+    vector<string> scene;
 
-		part = show[i];
-		for(int j=0; j<part.size(); j++) {
-			
-			vector<string> sortedScene = sortedScenes[part[j]];
-			if(i and sortedScene.size()) {
-				show[i][j] = sortedScene;
-				continue;
-			}
+    for(int i=0; i<m; i++) {
 
-			scene = part[j];
-			int awesomenessFirstAnimal = animals[scene[0]];
-			int awesomenessSecondAnimal = animals[scene[1]];
-			int awesomenessThirdAnimal = animals[scene[2]];
-			
-			if(awesomenessFirstAnimal < awesomenessSecondAnimal) {
-			
-				if(awesomenessSecondAnimal < awesomenessThirdAnimal) {
-				
-					sortedScenes[scene] = scene;
-	
-				} else if(awesomenessFirstAnimal < awesomenessThirdAnimal) {
-				
-					swap(show[i][j][1], show[i][j][2]);
-					sortedScenes[scene] = show[i][j];
-				} else {
-					
-					swap(show[i][j][1], show[i][j][2]);
-					swap(show[i][j][0], show[i][j][1]);
-					sortedScenes[scene] = show[i][j];
-				}
-			} else if(awesomenessFirstAnimal < awesomenessThirdAnimal) {
-			
-				swap(show[i][j][0], show[i][j][1]);
-				sortedScenes[scene] = show[i][j];
-	
-			} else if(awesomenessSecondAnimal < awesomenessThirdAnimal) {
-				
-				swap(show[i][j][0], show[i][j][2]);
-				swap(show[i][j][0], show[i][j][1]);
-				sortedScenes[scene] = show[i][j];
-	
-			} else {
-				
-				swap(show[i][j][0], show[i][j][2]);
-				sortedScenes[scene] = show[i][j];
-			}
+        part = show[i];
+        for(int j=0; j<part.size(); j++) {
 
-			scenesAwesomeness[show[i][j]] = awesomenessFirstAnimal + awesomenessSecondAnimal + awesomenessThirdAnimal;
-		}
-	}
+            vector<string> sortedScene = sortedScenes[part[j]];
+            if(i and sortedScene.size()) {
+                show[i][j] = sortedScene;
+                continue;
+            }
+
+            scene = part[j];
+            int awesomenessFirstAnimal = animals[scene[0]];
+            int awesomenessSecondAnimal = animals[scene[1]];
+            int awesomenessThirdAnimal = animals[scene[2]];
+
+            if(awesomenessFirstAnimal < awesomenessSecondAnimal) {
+
+                if(awesomenessSecondAnimal < awesomenessThirdAnimal) {
+
+                    sortedScenes[scene] = scene;
+
+                } else if(awesomenessFirstAnimal < awesomenessThirdAnimal) {
+
+                    swap(show[i][j][1], show[i][j][2]);
+                    sortedScenes[scene] = show[i][j];
+                } else {
+
+                    swap(show[i][j][1], show[i][j][2]);
+                    swap(show[i][j][0], show[i][j][1]);
+                    sortedScenes[scene] = show[i][j];
+                }
+            } else if(awesomenessFirstAnimal < awesomenessThirdAnimal) {
+
+                swap(show[i][j][0], show[i][j][1]);
+                sortedScenes[scene] = show[i][j];
+
+            } else if(awesomenessSecondAnimal < awesomenessThirdAnimal) {
+
+                swap(show[i][j][0], show[i][j][2]);
+                swap(show[i][j][0], show[i][j][1]);
+                sortedScenes[scene] = show[i][j];
+
+            } else {
+
+                swap(show[i][j][0], show[i][j][2]);
+                sortedScenes[scene] = show[i][j];
+            }
+
+            scenesAwesomeness[show[i][j]] = awesomenessFirstAnimal + awesomenessSecondAnimal + awesomenessThirdAnimal;
+        }
+    }
 }
 
 /**
  * Sorts the scenes of each part of the show.
- * 
+ *
  */
 void sortScenes() {
 
-	for(int i=0; i<m; i++) {
 
-		vector<vector<string>> part = show[i];
-		vector<int> sortedIndexes[3*n-3];
+    vector<string> scene;
+    vector<vector<string>> part;
 
-		for(int j=0; j<part.size(); j++) {
 
-			vector<string> scene = part[j];
-			int awesomeness = getSceneAwesomeness(scene);
-			sortedIndexes[awesomeness].push_back(j);
-		}
+    for (int f = 0;f < m; f++) {
 
-		string test = "";
-		for(int j=0; j<3*n-3; j++) {
 
-			vector<int> sceneIterators = sortedIndexes[j];
-			for(int l=0; l<sceneIterators.size(); l++) {
-				
-				test += to_string(sceneIterators[l]) + " ";
-			}
-			
-		}
-		cout << test << endl;
-	}
+        part = show[f];
+
+
+        for (int i = 0; i < part.size(); i++)
+
+            // Last i elements are already in place
+            for (int j = 0; j < part.size() - i -1   ; j++)
+                if ((getSceneAwesomeness(part[j])) > (getSceneAwesomeness(part[j+1]))){
+
+                    part[j].swap(part[j+1]);}
+        show[f]=part;
+
+    }
 }
+
+
+
 
 /**
  * Sorts the parts of the show.
- * 
+ *
  */
 void sortParts() {
 
-	//ToDo
+    //ToDo
 }
 
 /**
@@ -240,46 +241,46 @@ void sortParts() {
  *
  */
 int main() {
-	
-	string testCase = "prueba2";
-	ifstream file ("../Pruebas/" + testCase + ".txt");
-	file >> n >> m >> k;
-	setAnimals(file);
-	setShow(file);
-	cout << "sort animals" << endl;
-	sortAnimals();
-	cout << "sort scenes" << endl;
-	sortScenes();
-	cout << "sort parts" << endl;
-	sortParts();
 
-	//Pruebas
-	
-	cout << "test animals " << animals["Mariposa"] << endl;
+    string testCase = "prueba2";
+    ifstream file ("../Pruebas/" + testCase + ".txt");
+    file >> n >> m >> k;
+    setAnimals(file);
+    setShow(file);
+    cout << "sort animals" << endl;
+    sortAnimals();
+    cout << "sort scenes" << endl;
+    sortScenes();
+    cout << "sort parts" << endl;
+    sortParts();
 
-	cout << endl << "test show" << endl;
+    //Pruebas
 
-	cout << endl << "Apertura" << endl;
+    cout << "test animals " << animals["Mariposa"] << endl;
 
-	for(int i=0; i<k*(m-1); i++) {
-		for(int j=0; j<3; j++)
-			cout << show[0][i][j] << " ";
-		cout << endl;
-	}
+    cout << endl << "test show" << endl;
 
-	cout << endl;
+    cout << endl << "Apertura" << endl;
 
-	for(int i=1; i<m; i++) {
-		cout << "Parte " << i << endl;
-		for(int j=0; j<k; j++) {
-			for(int l=0; l<3; l++)
-				cout << show[i][j][l] << " ";
-			cout << endl;
-		}
+    for(int i=0; i<k*(m-1); i++) {
+        for(int j=0; j<3; j++)
+            cout << show[0][i][j] << " ";
+        cout << endl;
+    }
 
-		cout << endl;
-	}
+    cout << endl;
 
-	cout << "El promedio de grandeza de todo el espectaculo fue de " << fixed << setprecision(2) << getShowAverageAwesomeness() << endl;
-	return 0;
+    for(int i=1; i<m; i++) {
+        cout << "Parte " << i << endl;
+        for(int j=0; j<k; j++) {
+            for(int l=0; l<3; l++)
+                cout << show[i][j][l] << " ";
+            cout << endl;
+        }
+
+        cout << endl;
+    }
+
+    cout << "El promedio de grandeza de todo el espectaculo fue de " << fixed << setprecision(2) << getShowAverageAwesomeness() << endl;
+    return 0;
 }
