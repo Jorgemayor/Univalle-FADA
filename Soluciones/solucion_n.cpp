@@ -115,7 +115,6 @@ int getPartAwesomeness(vector<vector<string>> part){
  */
 float getShowAverageAwesomeness(){
 
-
 	int sum = 0;
 
 	for(int i=0; i<show[0].size();i++){
@@ -187,6 +186,8 @@ void sortScenes() {
 
 	for(int i=0; i<m; i++) {
 
+		cout << "Part " << i << endl;
+		
 		vector<vector<string>> part = show[i];
 		vector<int> sortedIndexes[3*n-3];
 
@@ -196,18 +197,22 @@ void sortScenes() {
 			int awesomeness = getSceneAwesomeness(scene);
 			sortedIndexes[awesomeness].push_back(j);
 		}
-
-		string test = "";
+		
+		vector<vector<string>> sortedPart;
 		for(int j=0; j<3*n-3; j++) {
-
-			vector<int> sceneIterators = sortedIndexes[j];
-			for(int l=0; l<sceneIterators.size(); l++) {
-				
-				test += to_string(sceneIterators[l]) + " ";
-			}
 			
+			vector<int> scenesWithEqualAwesomeness = sortedIndexes[j];
+			
+			cout << "Scene with " << j << " of awesomeness: " << scenesWithEqualAwesomeness.size() << endl;
+
+			for(int l=0; l<scenesWithEqualAwesomeness.size(); l++) {
+				cout << "	It of scenes with equal awesomeness: " << scenesWithEqualAwesomeness[l] << endl;
+				sortedPart.push_back(part[scenesWithEqualAwesomeness[l]]);
+			}	
 		}
-		cout << test << endl;
+		show[i] = sortedPart;
+
+		cout << endl;
 	}
 }
 
