@@ -213,12 +213,14 @@ void sortScenes() {
 
 
         for (int i = 0; i < part.size(); i++)
+        {
 
             // Last i elements are already in place
             for (int j = 0; j < part.size() - i -1   ; j++)
                 if ((getSceneAwesomeness(part[j])) > (getSceneAwesomeness(part[j+1]))){
 
                     part[j].swap(part[j+1]);}
+        }
         show[f]=part;
 
     }
@@ -233,8 +235,38 @@ void sortScenes() {
  */
 void sortParts() {
 
-    //ToDo
+    //vector<vector<vector<string>>> showCopy;
+    int partAwesomeness[m];
+    for (int i = 0; i < m; i++) {
+
+        partAwesomeness[i] = getPartAwesomeness(show[i]);
+
+
+    }
+
+
+       //showCopy = show;
+       for (int i = 0; i < show.size(); i++) {
+
+           // Last i elements are already in place
+           for (int j = 1; j < show.size() - i - 1; j++) {
+               if (partAwesomeness[j] > partAwesomeness[j + 1]) {
+
+                   show[j].swap(show[j + 1]);
+                   int temp = partAwesomeness[j];
+                   partAwesomeness[j+1]=temp;
+                   partAwesomeness[j]=partAwesomeness[j+1];
+               }
+           }
+
+       }
+       //show = showCopy;
+
+
 }
+
+
+
 
 /**
  * Main function
@@ -280,6 +312,8 @@ int main() {
 
         cout << endl;
     }
+
+
 
     cout << "El promedio de grandeza de todo el espectaculo fue de " << fixed << setprecision(2) << getShowAverageAwesomeness() << endl;
     return 0;
