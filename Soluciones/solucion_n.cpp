@@ -11,6 +11,7 @@ using namespace std;
 int n, m, k;
 vector<vector<vector<string>>> show;
 unordered_map<string, int> animals;
+int showAwesomeness = 0;
 
 /**
  * Reads the input related to the animals from an
@@ -108,27 +109,6 @@ int getPartAwesomeness(vector<vector<string>> part){
 }
 
 /**
- * Gets the average awesomeness of the show.
- * 
- * @return average float --> Value of the average awesomeness of
- * the show.
- */
-float getShowAverageAwesomeness(){
-
-	int sum = 0;
-
-	for(int i=0; i<show[0].size();i++){
-
-		sum += getSceneAwesomeness(show[0][i]);
-	}
-	
-	float average = sum / ((m - 1.0) * k);
-	return average;
-}
-
-
-
-/**
  * Sorts the animals of each scene of each part of the show.
  * 
  */
@@ -222,7 +202,16 @@ void sortScenes() {
  */
 void sortParts() {
 
-	//ToDo
+	int partAwesomeness[m];
+		
+	for(int i=0; i<m; i++) {
+
+		partAwesomeness[i] = getPartAwesomeness(show[i]);
+		showAwesomeness += partAwesomeness[i];
+		cout << partAwesomeness[i] << endl;
+	}
+
+	cout << "showA " << showAwesomeness << endl;
 }
 
 /**
@@ -270,6 +259,6 @@ int main() {
 		cout << endl;
 	}
 
-	cout << "El promedio de grandeza de todo el espectaculo fue de " << fixed << setprecision(2) << getShowAverageAwesomeness() << endl;
+	cout << "El promedio de grandeza de todo el espectaculo fue de " << fixed << setprecision(2) << showAwesomeness / ((m - 1.0) * k * 2) << endl;
 	return 0;
 }
