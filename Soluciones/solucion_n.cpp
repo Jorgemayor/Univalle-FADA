@@ -185,7 +185,7 @@ void sortScenes() {
 		}
 		
 		vector<vector<string>> sortedPart;
-		for(int j=6; j<3*n-3; j++) {
+		for(int j=6; j<=3*n-3; j++) {
 			
 			vector<int> scenesWithEqualAwesomeness = sortedIndexes[j];
 
@@ -211,7 +211,9 @@ void sortParts() {
 		int awesomeness = getPartAwesomeness(show[i]);
 		partAwesomeness[i] = awesomeness;
 		showAwesomeness += awesomeness;
-		biggestPartAwesomeness = (awesomeness>biggestPartAwesomeness)?awesomeness:biggestPartAwesomeness;
+		
+		if(awesomeness > biggestPartAwesomeness)
+			biggestPartAwesomeness = awesomeness;
 	}
 
 	vector<int> sortedIndexes[biggestPartAwesomeness+1];
@@ -227,7 +229,7 @@ void sortParts() {
 	vector<vector<vector<string>>> sortedShow;
 	sortedShow.push_back(show[0]);
 
-	for(int i=6; i<biggestPartAwesomeness; i++) {
+	for(int i=6; i<=biggestPartAwesomeness; i++) {
 		
 		vector<int> partsWithEqualAwesomeness = sortedIndexes[i];
 
@@ -245,7 +247,7 @@ void sortParts() {
  */
 int main() {
 	
-	string testCase = "prueba1";
+	string testCase = "prueba4";
 	ifstream file ("../Pruebas/" + testCase + ".txt");
 	file >> n >> m >> k;
 	setAnimals(file);
