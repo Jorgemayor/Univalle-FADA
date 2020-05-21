@@ -2,12 +2,14 @@
 #include <string.h>
 #include <iomanip>
 #include <algorithm>
+#include <chrono>
 #include <unordered_map>
 #include <vector>
 #include <stdlib.h>
 #include <string.h>
 #include <fstream>
 using namespace std;
+using namespace std::chrono;
 
 int n, m, k;
 vector<vector<vector<string>>> show;
@@ -246,14 +248,15 @@ void sortParts() {
  *
  */
 int main() {
-	
-	string testCase = "prueba4";
+    auto start = high_resolution_clock::now();
+	string testCase = "prueba1"
+                   "";
 	ifstream file ("../Pruebas/" + testCase + ".txt");
 	file >> n >> m >> k;
 	setAnimals(file);
 	setShow(file);
 	sortAnimals();
-	sortScenes();
+	//sortScenes();
 	sortParts();
 
 	//Pruebas
@@ -320,7 +323,7 @@ int main() {
 		message += popularAnimals[0];
 		int i = 1;
 		
-		for(i; i<numberOfAnimals - 1; i++) {
+		for(int i = 1; i<numberOfAnimals - 1; i++) {
 			message += ", " + popularAnimals[i];
 		}
 		message += " y " + popularAnimals[i];
@@ -339,7 +342,7 @@ int main() {
 		message += unpopularAnimals[0];
 		int i = 1;
 		
-		for(i; i<numberOfAnimals - 1; i++) {
+		for(int i; i<numberOfAnimals - 1; i++) {
 			message += ", " + unpopularAnimals[i];
 		}
 		message += " y " + unpopularAnimals[i];
@@ -351,5 +354,9 @@ int main() {
 	}
 	
 	cout << "El promedio de grandeza de todo el espectaculo fue de " << fixed << setprecision(2) << showAwesomeness / ((m - 1.0) * k * 2) << endl;
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(stop - start);
+    cout << "Tiempo: "<< duration.count() << endl;
 	return 0;
+
 }

@@ -1,6 +1,6 @@
 6 3 2
-Ciempiés 1
-Libélula 2
+Ciempies 1
+Libelula 2
 Gato 3
 Perro 4
 Tapir 5
@@ -8,11 +8,11 @@ Nutria 6
 
 Tapir Nutria Perro
 Tapir Perro Gato
-Ciempiés Tapir Gato
-Gato Ciempiés Libélula
+Ciempies Tapir Gato
+Gato Libelula Ciempies
 
 Tapir Nutria Perro
-Ciempiés Tapir Gato
+Ciempies Tapir Gato
 
-Gato Ciempiés Libélula
+Gato Ciempies Libelula
 Tapir Perro Gato

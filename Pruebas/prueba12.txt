@@ -1,8 +1,9 @@
 3 2 1
-Elefante 3
-Ratón 1
-Tigre 2
 
-Elefante Ratón Tigre
+a 1
+b 2
+c 3
 
-Elefante Ratón Tigre
+c a b
+
+c a b

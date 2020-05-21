@@ -8,7 +8,7 @@
 #include <string.h>
 #include <fstream>
 using namespace std;
-
+using namespace std::chrono;
 int n, m, k;
 vector<vector<vector<string>>> show;
 map<vector<string>, vector<string>> sortedScenes;
@@ -132,11 +132,6 @@ void sortAnimals() {
 		part = show[i];
 		for(int j=0; j<part.size(); j++) {
 			
-			vector<string> sortedScene = sortedScenes[part[j]];
-			if(i and sortedScene.size()) {
-				show[i][j] = sortedScene;
-				continue;
-			}
 
 			scene = part[j];
 			int awesomenessFirstAnimal = animals[scene[0]];
@@ -261,8 +256,9 @@ void sortParts() {
  *
  */
 int main() {
-	
-	string testCase = "prueba1";
+
+    auto start = high_resolution_clock::now();
+	string testCase = "prueba8";
 	ifstream file ("../Pruebas/" + testCase + ".txt");
 	file >> n >> m >> k;
 	setAnimals(file);
@@ -366,5 +362,8 @@ int main() {
 	}
 
 	cout << "El promedio de grandeza de todo el espectaculo fue de " << fixed << setprecision(2) << showAwesomeness / ((m - 1.0) * k * 2) << endl;
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(stop - start);
+    cout << "Tiempo: "<< duration.count() << endl;
 	return 0;
 }
