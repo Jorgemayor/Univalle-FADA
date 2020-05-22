@@ -1,47 +1,123 @@
-10 6 3
-Lobo 4
-Mantarraya 3
-Cerdo 5
-Jabalí 7
-Elefante 2
-Jirafa 10
-Ballena 8
-Ardilla 9
-Armadillo 1
-Libélula 6
+10 11 5
+animal1 4
+animal2 5
+animal3 7
+animal4 2
+animal5 10
+animal6 8
+animal7 6
+animal8 1
+animal9 3
+animal10 9
 
-Libélula Lobo Jirafa
-Armadillo Ardilla Ballena
-Elefante Jabalí Cerdo
-Lobo Mantarraya Cerdo
-Jabalí Elefante Jirafa
-Ballena Ardilla Armadillo
-Libélula Lobo Mantarraya
-Libélula Ardilla Jirafa
-Armadillo Ballena Elefante
-Ardilla Jirafa Jabalí
-Ballena Elefante Cerdo
-Jirafa Jabalí Mantarraya
-Elefante Cerdo Lobo
-Mantarraya Elefante Armadillo
-Mantarraya Ardilla Cerdo
+animal1 animal7 animal5 
+animal9 animal3 animal5 
+animal2 animal1 animal7 
+animal2 animal3 animal10 
+animal8 animal10 animal2 
+animal9 animal2 animal1 
+animal3 animal7 animal5 
+animal10 animal6 animal5 
+animal10 animal1 animal7 
+animal9 animal4 animal2 
+animal8 animal9 animal2 
+animal3 animal4 animal8 
+animal3 animal10 animal1 
+animal1 animal4 animal5 
+animal1 animal8 animal5 
+animal4 animal10 animal3 
+animal4 animal8 animal5 
+animal9 animal10 animal2 
+animal7 animal1 animal8 
+animal2 animal10 animal5 
+animal1 animal2 animal10 
+animal10 animal7 animal5 
+animal9 animal7 animal8 
+animal8 animal3 animal7 
+animal9 animal1 animal6 
+animal1 animal9 animal10 
+animal4 animal6 animal5 
+animal8 animal6 animal5 
+animal2 animal6 animal5 
+animal9 animal3 animal7 
+animal2 animal10 animal7 
+animal9 animal4 animal7 
+animal9 animal6 animal5 
+animal1 animal4 animal6 
+animal3 animal9 animal1 
+animal10 animal1 animal5 
+animal3 animal8 animal5 
+animal9 animal10 animal3 
+animal2 animal10 animal6 
+animal10 animal4 animal6 
+animal2 animal3 animal7 
+animal9 animal1 animal5 
+animal9 animal10 animal5 
+animal10 animal3 animal5 
+animal9 animal3 animal8 
+animal6 animal7 animal5 
+animal1 animal2 animal4 
+animal1 animal4 animal7 
+animal3 animal1 animal7 
+animal4 animal9 animal3 
 
-Mantarraya Ardilla Cerdo
-Ballena Elefante Cerdo
-Libélula Lobo Jirafa
+animal2 animal3 animal7 
+animal2 animal1 animal7 
+animal1 animal4 animal7 
+animal3 animal1 animal7 
+animal3 animal8 animal5 
 
-Mantarraya Elefante Armadillo
-Elefante Cerdo Lobo
-Jirafa Jabalí Mantarraya
+animal1 animal7 animal5 
+animal9 animal6 animal5 
+animal10 animal6 animal5 
+animal8 animal6 animal5 
+animal3 animal10 animal1 
 
-Armadillo Ballena Elefante
-Lobo Mantarraya Cerdo
-Armadillo Ardilla Ballena
+animal2 animal10 animal7 
+animal9 animal4 animal7 
+animal8 animal3 animal7 
+animal2 animal6 animal5 
+animal3 animal4 animal8 
 
-Libélula Ardilla Jirafa
-Libélula Lobo Mantarraya
-Ballena Ardilla Armadillo
+animal9 animal10 animal2 
+animal9 animal7 animal8 
+animal9 animal3 animal7 
+animal4 animal8 animal5 
+animal4 animal10 animal3 
 
-Jabalí Elefante Jirafa
-Elefante Jabalí Cerdo
-Ardilla Jirafa Jabalí
+animal9 animal2 animal1 
+animal1 animal4 animal6 
+animal1 animal4 animal5 
+animal10 animal1 animal5 
+animal9 animal10 animal3 
+
+animal9 animal1 animal5 
+animal9 animal3 animal5 
+animal2 animal10 animal5 
+animal1 animal2 animal10 
+animal10 animal7 animal5 
+
+animal10 animal4 animal6 
+animal3 animal7 animal5 
+animal1 animal9 animal10 
+animal8 animal9 animal2 
+animal1 animal8 animal5 
+
+animal9 animal3 animal8 
+animal1 animal2 animal4 
+animal9 animal1 animal6 
+animal9 animal4 animal2 
+animal2 animal10 animal6 
+
+animal10 animal3 animal5 
+animal2 animal3 animal10 
+animal6 animal7 animal5 
+animal8 animal10 animal2 
+animal10 animal1 animal7 
+
+animal7 animal1 animal8 
+animal9 animal10 animal5 
+animal3 animal9 animal1 
+animal4 animal6 animal5 
+animal4 animal9 animal3 
+

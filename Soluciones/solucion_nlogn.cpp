@@ -258,7 +258,7 @@ void sortParts() {
 int main() {
 
     auto start = high_resolution_clock::now();
-	string testCase = "prueba8";
+	string testCase = "pruebatest";
 	ifstream file ("../Pruebas/" + testCase + ".txt");
 	file >> n >> m >> k;
 	setAnimals(file);
@@ -366,4 +366,41 @@ int main() {
     auto duration = duration_cast<microseconds>(stop - start);
     cout << "Tiempo: "<< duration.count() << endl;
 	return 0;
+
+    //n = 6, m = 2, k = 3;
+    //t1 = 351
+    //t2 = 384
+    //t3 = 348
+    //t4 = 351
+    //t5 = 353
+    //t6 = 488
+    //tpromedio = 0.00037916
+
+    //n = 10, m = 2, k = 5;
+    //t1 = 496
+    //t2 = 508
+    //t3 = 465
+    //t4 = 511
+    //t5 = 467
+    //t6 = 498
+    //tpromedio = 0.00049083
+
+
+    //n = 50, m = 10; k = 25
+    //t1 = 76296
+    //t2 = 47221
+    //t3 = 51986
+    //t4 = 47363
+    //t5 = 50808
+    //t6 = 51129
+    //tpromedio = 0.05413383
+
+    //n = 100, m = 20, k = 50;
+    //t1 = 122487
+    //t2 = 119429
+    //t3 = 96442
+    //t4 = 94713
+    //t5 = 94153
+    //t6 = 98798
+    //tpromedio = 0.104337
 }
