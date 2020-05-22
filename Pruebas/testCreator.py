@@ -64,7 +64,7 @@ with open(test_name, 'a') as file_:
 	
 	for i in range(m-1):
 		part = set()
-		while len(part) < 3:
+		while len(part) < k:
 			part.add(random.choice(list(scenes)))
 		scenes -= part
 		for scene in part:
