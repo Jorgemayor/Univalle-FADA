@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string.h>
 #include <iomanip>
-#include <algorithm>
 #include <unordered_map>
 #include <vector>
 #include <stdlib.h>
@@ -240,14 +239,78 @@ void sortParts() {
 
 	show = sortedShow;
 }
+/*
+vector<vector<string>> sortEqualAwesomenssScenes(vector<vector<string>> part) {
 
+	vector<int> sortedIndexes[n+1];
+
+	for(int i=0; i<part.size(); i++) {
+
+		int biggestAwesomeness = animals[part[i][2]];
+		sortedIndexes[biggestAwesomeness].push_back(i);
+	}
+
+	vector<vector<string>> sortedPart;
+
+	for(int i=1; i<=n; i++) {
+		
+		vector<int> scenesWithEqualAwesomeness = sortedIndexes[i];
+
+		for(int j=0; j<partsWithEqualAwesomeness.size(); j++) {
+			sortedPart.push_back(part[scenesWithEqualAwesomeness[j]]);
+		}	
+	}
+	return sortedPart;
+}
+
+vector<vector<string>> breakTiedScenes(vector<vector<string>> part) {
+
+	int awesomeness = 0;
+	vector<int> equalAwesomenessSceneIndexes;
+
+	for(int i=0; i<part.size(); i++) {
+
+		int sceneAwesomeness = getSceneAwesomeness(part[i]);
+		if(sceneAwesomeness != awesomeness) {
+		
+			int numberOfIndexes = equalAwesomenessSceneIndexes.size();
+			if(numberOfIndexes > 1) {
+				vector<int> sortedIndexes[n+1];
+
+				for(int i=0; i<part.size(); i++) {
+
+					int biggestAwesomeness = animals[part[i][2]];
+					sortedIndexes[biggestAwesomeness].push_back(i);
+				}
+
+				vector<vector<string>> sortedPart;
+
+				for(int j=1; j<=n; i++) {
+					
+					vector<int> scenesWithEqualAwesomeness = sortedIndexes[i];
+
+					for(int j=0; j<partsWithEqualAwesomeness.size(); j++) {
+						sortedPart.push_back(part[scenesWithEqualAwesomeness[j]]);
+					}	
+				}
+			}
+			
+			equalAwesomenessSceneIndexes.clear();
+			awesomeness = sceneAwesomeness;
+		}
+		equalAwesomenessSceneIndexes.push_back(i);
+	}
+
+	return part;
+}
+*/
 /**
  * Main function
  *
  */
 int main() {
 	
-	string testCase = "prueba4";
+	string testCase = "test";
 	ifstream file ("../Pruebas/" + testCase + ".txt");
 	file >> n >> m >> k;
 	setAnimals(file);
@@ -255,9 +318,10 @@ int main() {
 	sortAnimals();
 	sortScenes();
 	sortParts();
-
-	//Pruebas
-
+/*
+	for(int i=0; i<m; i++)
+		show[i] = breakTiedScenes(show[i]);
+*/
 	cout << endl << "Apertura" << endl;
 
 	for(int i=0; i<k*(m-1); i++) {
