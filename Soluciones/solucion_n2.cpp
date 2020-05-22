@@ -13,9 +13,9 @@ using namespace std::chrono;
 
 int n, m, k;
 vector<vector<vector<string>>> show;
-map<vector<string>, vector<string>> sortedScenes;
-map<vector<string>, int> scenesAwesomeness;
 unordered_map<string, int> animals;
+unordered_map<string, int> animalParticipations;
+int showAwesomeness = 0;
 
 /**
  * Reads the input related to the animals from an
@@ -40,43 +40,49 @@ void setAnimals(ifstream & file) {
  * @param file ifstream --> Test case file.
  */
 void setShow(ifstream & file){
+	
+	vector<vector<string>> part;
+	vector<string> scene;
+	string animal;
 
-    vector<vector<string>> part;
-    vector<string> scene;
-    string animal;
+	for(int i=0; i<k*(m-1); i++){
+		scene.clear();
 
-    for(int i=0; i<k*(m-1); i++){
-        scene.clear();
+		file>>animal;
+		scene.push_back(animal);
+		animalParticipations[animal]++;
+		file>>animal;
+		scene.push_back(animal);
+		animalParticipations[animal]++;
+		file>>animal;
+		scene.push_back(animal);
+		animalParticipations[animal]++;
 
-        file>>animal;
-        scene.push_back(animal);
-        file>>animal;
-        scene.push_back(animal);
-        file>>animal;
-        scene.push_back(animal);
+		part.push_back(scene);
+	}
 
-        part.push_back(scene);
-    }
+	show.push_back(part);
+	
+	for(int i=1; i<m; i++){
+		part.clear();
+		
+		for(int j=0; j<k; j++){
+			scene.clear();
+			
+			file>>animal;
+			scene.push_back(animal);
+			animalParticipations[animal]++;
+			file>>animal;
+			scene.push_back(animal);
+			animalParticipations[animal]++;
+			file>>animal;
+			scene.push_back(animal);
+			animalParticipations[animal]++;
 
-    show.push_back(part);
-
-    for(int i=1; i<m; i++){
-        part.clear();
-
-        for(int j=0; j<k; j++){
-            scene.clear();
-
-            file>>animal;
-            scene.push_back(animal);
-            file>>animal;
-            scene.push_back(animal);
-            file>>animal;
-            scene.push_back(animal);
-
-            part.push_back(scene);
-        }
-        show.push_back(part);
-    }
+			part.push_back(scene);
+		}
+		show.push_back(part);
+	}
 }
 
 /**
@@ -114,28 +120,6 @@ int getPartAwesomeness(vector<vector<string>> part){
 }
 
 /**
- * Gets the average awesomeness of the show.
- * 
- * @return average float --> Value of the average awesomeness of
- * the show.
- */
-float getShowAverageAwesomeness(){
-
-
-    int sum = 0;
-
-    for(int i=0; i<show[0].size();i++){
-
-        sum += getSceneAwesomeness(show[0][i]);
-    }
-
-    float average = sum / ((m - 1.0) * k);
-    return average;
-}
-
-
-
-/**
  * Sorts the animals of each scene of each part of the show.
  * 
  */
@@ -149,12 +133,6 @@ void sortAnimals() {
         part = show[i];
         for(int j=0; j<part.size(); j++) {
 
-            vector<string> sortedScene = sortedScenes[part[j]];
-            if(i and sortedScene.size()) {
-                show[i][j] = sortedScene;
-                continue;
-            }
-
             scene = part[j];
             int awesomenessFirstAnimal = animals[scene[0]];
             int awesomenessSecondAnimal = animals[scene[1]];
@@ -164,36 +142,29 @@ void sortAnimals() {
 
                 if(awesomenessSecondAnimal < awesomenessThirdAnimal) {
 
-                    sortedScenes[scene] = scene;
+                    continue;
 
                 } else if(awesomenessFirstAnimal < awesomenessThirdAnimal) {
 
                     swap(show[i][j][1], show[i][j][2]);
-                    sortedScenes[scene] = show[i][j];
                 } else {
 
                     swap(show[i][j][1], show[i][j][2]);
                     swap(show[i][j][0], show[i][j][1]);
-                    sortedScenes[scene] = show[i][j];
                 }
             } else if(awesomenessFirstAnimal < awesomenessThirdAnimal) {
 
                 swap(show[i][j][0], show[i][j][1]);
-                sortedScenes[scene] = show[i][j];
 
             } else if(awesomenessSecondAnimal < awesomenessThirdAnimal) {
 
                 swap(show[i][j][0], show[i][j][2]);
                 swap(show[i][j][0], show[i][j][1]);
-                sortedScenes[scene] = show[i][j];
 
             } else {
 
                 swap(show[i][j][0], show[i][j][2]);
-                sortedScenes[scene] = show[i][j];
             }
-
-            scenesAwesomeness[show[i][j]] = awesomenessFirstAnimal + awesomenessSecondAnimal + awesomenessThirdAnimal;
         }
     }
 }
@@ -204,33 +175,25 @@ void sortAnimals() {
  */
 void sortScenes() {
 
+	vector<string> scene;
+	vector<vector<string>> part;
 
-    vector<string> scene;
-    vector<vector<string>> part;
+	for(int f = 0;f < m; f++) {
 
+		part = show[f];
 
-    for (int f = 0;f < m; f++) {
+		for (int i = 0; i < part.size(); i++)
+		{
+			// Last i elements are already in place
+			for (int j = 0; j < part.size() - i -1   ; j++)
+				if ((getSceneAwesomeness(part[j])) > (getSceneAwesomeness(part[j+1]))){
 
+					part[j].swap(part[j+1]);}
+				}
 
-        part = show[f];
-
-
-        for (int i = 0; i < part.size(); i++)
-        {
-
-            // Last i elements are already in place
-            for (int j = 0; j < part.size() - i -1   ; j++)
-                if ((getSceneAwesomeness(part[j])) > (getSceneAwesomeness(part[j+1]))){
-
-                    part[j].swap(part[j+1]);}
-        }
-        show[f]=part;
-
-    }
+			show[f]=part;
+	}
 }
-
-
-
 
 /**
  * Sorts the parts of the show.
@@ -238,50 +201,43 @@ void sortScenes() {
  */
 void sortParts() {
 
-    //vector<vector<vector<string>>> showCopy;
-    int partAwesomeness[m];
-    for (int i = 0; i < m; i++) {
+	int partAwesomeness[m];
+	int biggestPartAwesomeness = 0;
+	
+	for(int i=0; i<m; i++) {
 
-        partAwesomeness[i] = getPartAwesomeness(show[i]);
+		int awesomeness = getPartAwesomeness(show[i]);
+		partAwesomeness[i] = awesomeness;
+		showAwesomeness += awesomeness;
 
+		if(awesomeness > biggestPartAwesomeness)
+			biggestPartAwesomeness = awesomeness;
 
-    }
+	}
 
+	for(int i = 0; i < show.size(); i++) {
 
-       //showCopy = show;
-       for (int i = 0; i < show.size(); i++) {
+		// Last i elements are already in place
+		for(int j = 1; j < show.size() - i - 1; j++) {
+			if (partAwesomeness[j] > partAwesomeness[j + 1]) {
 
-           // Last i elements are already in place
-           for (int j = 1; j < show.size() - i - 1; j++) {
-               if (partAwesomeness[j] > partAwesomeness[j + 1]) {
-
-                   show[j].swap(show[j + 1]);
-                   int temp = partAwesomeness[j];
-                   partAwesomeness[j+1]=temp;
-                   partAwesomeness[j]=partAwesomeness[j+1];
-               }
-           }
-
-       }
-       //show = showCopy;
-
-
+				show[j].swap(show[j + 1]);
+				int temp = partAwesomeness[j];
+				partAwesomeness[j+1]=temp;
+				partAwesomeness[j]=partAwesomeness[j+1];
+			}
+		}
+	}
 }
-
-
-
 
 /**
  * Main function
  *
  */
-
-
-
 int main() {
     auto start = high_resolution_clock::now();
 
-    string testCase = "pruebatest";
+    string testCase = "prueba1";
     ifstream file ("../Pruebas/" + testCase + ".txt");
     file >> n >> m >> k;
     setAnimals(file);
@@ -320,9 +276,78 @@ int main() {
         cout << endl;
     }
 
+	unordered_map<string, int>::iterator it = animalParticipations.begin();
+	int biggestQuantityParticipations = 0;
+	int smallestQuantityParticipations = (m - 1) * 2 * k;
+	vector<string> popularAnimals;
+	vector<string> unpopularAnimals;
 
+	while (it != animalParticipations.end())
+	{
 
-    cout << "El promedio de grandeza de todo el espectaculo fue de " << fixed << setprecision(2) << getShowAverageAwesomeness() << endl;
+		int participations = it->second;
+
+		if(participations > biggestQuantityParticipations) {
+			biggestQuantityParticipations = participations;
+			popularAnimals.clear();
+			popularAnimals.push_back(it->first);
+
+		} else if(participations == biggestQuantityParticipations) {
+			popularAnimals.push_back(it->first);
+		}
+
+		if(participations < smallestQuantityParticipations) {
+			smallestQuantityParticipations = participations;
+			unpopularAnimals.clear();
+			unpopularAnimals.push_back(it->first);
+
+		} else if(participations == smallestQuantityParticipations) {
+			unpopularAnimals.push_back(it->first);
+		}
+
+		it++;
+	}
+
+	int numberOfAnimals = popularAnimals.size();
+	bool plural = numberOfAnimals > 1;
+
+	if(plural) {
+
+		string message = "";
+		message += popularAnimals[0];
+		int i = 1;
+		
+		for(int i = 1; i<numberOfAnimals - 1; i++) {
+			message += ", " + popularAnimals[i];
+		}
+		message += " y " + popularAnimals[i];
+		
+		cout << "Los animales que más participaron fueron: " + message + " con " + to_string(biggestQuantityParticipations) + " participaciones." << endl;
+	} else {
+		cout << "El animal que más participó fue: " + popularAnimals[0] + " con " + to_string(biggestQuantityParticipations) + " participaciones." << endl;
+	}
+
+	numberOfAnimals = unpopularAnimals.size();
+	plural = numberOfAnimals > 1;
+
+	if(plural) {
+
+		string message = "";
+		message += unpopularAnimals[0];
+		int i = 1;
+		
+		for(int i; i<numberOfAnimals - 1; i++) {
+			message += ", " + unpopularAnimals[i];
+		}
+		message += " y " + unpopularAnimals[i];
+		
+		cout << "Los animales que menos participaron fueron: " + message + " con " + to_string(smallestQuantityParticipations) + " participaciones." << endl;
+	} else {
+		
+		cout << "El animal que más participó fue: " + unpopularAnimals[0] + " con " + to_string(smallestQuantityParticipations) + " participaciones." << endl;
+	}
+
+    cout << "El promedio de grandeza de todo el espectaculo fue de " << fixed << setprecision(2) << showAwesomeness / ((m - 1.0) * 2 * k) << endl;
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
     cout << "Tiempo: "<< duration.count() << endl;
@@ -374,7 +399,5 @@ int main() {
     //tpromedio =  139.32268
 
     return 0;
-
-
 }
 
