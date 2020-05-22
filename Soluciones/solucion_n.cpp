@@ -313,7 +313,7 @@ vector<vector<string>> breakTiedScenes(vector<vector<string>> part) {
 int main() {
 
 	auto start = high_resolution_clock::now();
-	string testCase = "test";
+	string testCase = "pruebatest";
 	ifstream file ("../Pruebas/" + testCase + ".txt");
 	file >> n >> m >> k;
 	setAnimals(file);
@@ -422,5 +422,44 @@ int main() {
     auto duration = duration_cast<microseconds>(stop - start);
     cout << "Tiempo: "<< duration.count() << endl;
 	return 0;
+
+    //n = 6, m = 2, k = 3;
+    //t1 = 310
+    //t2 = 331
+    //t3 = 326
+    //t4 = 312
+    //t5 = 314
+    //t6 = 320
+    //tpromedio = 0.00031883
+
+    //n = 10, m = 2, k = 5;
+    //t1 = 373
+    //t2 = 590
+    //t3 = 369
+    //t4 = 382
+    //t5 = 413
+    //t6 = 381
+    //tpromedio = 0.000418
+
+
+    //n = 50, m = 10; k = 25
+    //t1 = 45918
+    //t2 = 44672
+    //t3 = 46163
+    //t4 = 42432
+    //t5 = 46672
+    //t6 = 45289
+    //tpromedio = 0.045191
+
+    //n = 100, m = 20, k = 50;
+    //t1 = 53407
+    //t2 = 59411
+    //t3 = 52167
+    //t4 = 54466
+    //t5 = 54228
+    //t6 = 59299
+    //tpromedio = 0.05549633
+
+
 
 }

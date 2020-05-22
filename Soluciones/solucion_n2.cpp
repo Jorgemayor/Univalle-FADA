@@ -95,6 +95,7 @@ int getSceneAwesomeness(vector<string> scene){
 }
 
 /**
+/**
  * Gets the awesomeness of a part
  * 
  * @param part vector<vector<string>> --> vector
@@ -280,7 +281,7 @@ void sortParts() {
 int main() {
     auto start = high_resolution_clock::now();
 
-    string testCase = "prueba3";
+    string testCase = "pruebatest";
     ifstream file ("../Pruebas/" + testCase + ".txt");
     file >> n >> m >> k;
     setAnimals(file);
@@ -325,6 +326,53 @@ int main() {
     auto stop = high_resolution_clock::now();
     auto duration = duration_cast<microseconds>(stop - start);
     cout << "Tiempo: "<< duration.count() << endl;
+
+    //n = 6, m = 2, k = 3;
+    //t1 = 290
+    //t2 = 336
+    //t3 = 288
+    //t4 = 286
+    //t5 = 298
+    //t6 = 292
+    //tpromedio =  0.00029833
+
+    //n = 10, m = 2, k = 5;
+    //t1 = 383
+    //t2 = 443
+    //t3 = 453
+    //t4 = 392
+    //t5 = 384
+    //t6 = 385
+    //tpromedio = 0.00040666
+
+
+    //n = 50, m = 10; k = 25
+    //t1 = 97182
+    //t2 = 102057
+    //t3 = 99033
+    //t4 = 100199
+    //t5 = 97598
+    //t6 = 98127
+    //tpromedio = 0.09903266
+
+    //n = 100, m = 20, k = 50;
+    //t1 = 2778620
+    //t2 = 2964920
+    //t3 = 2959979
+    //t4 = 1819175
+    //t5 = 2456982
+    //t6 = 2291897
+    //tpromedio = 2.54526216
+
+    //n = 300, m = 60, k= 150
+    //t1 = 145501469
+    //t2 = 136811187
+    //t3 = 139240178
+    //t4 = 135968227
+    //t5 = 138128177
+    //t6 = 140286842
+    //tpromedio =  139.32268
+
     return 0;
 
 
