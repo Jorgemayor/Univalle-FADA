@@ -19,6 +19,12 @@ n = args.n
 m = args.m
 k = args.k
 
+if not 1 <= k * (m - 1) <= n * (n - 1) * (n - 2) / 6:
+	print("""Invalid data. There are not enough possible scenes.
+Keep in mind the relation:
+1 <= k * (m - 1) <= n * (n - 1) * (n - 2) / 6""")
+	exit(1)
+
 animal_names = []
 animals_awesomeness = [i for i in range(1, n + 1)]
 scenes = set()
@@ -44,7 +50,6 @@ while len(scenes) < ((m - 1) * k):
 	while len(scene) < 3:
 		scene.add(random.choice(animal_names))
 	scenes.add(frozenset(scene))
-	print(str(len(scenes)) + '\n')
 	
 
 with open(test_name, 'a') as file_:
@@ -58,7 +63,9 @@ with open(test_name, 'a') as file_:
 	
 	
 	for i in range(m-1):
-		part = set(random.choices(list(scenes), k=k))
+		part = set()
+		while len(part) < 3:
+			part.add(random.choice(list(scenes)))
 		scenes -= part
 		for scene in part:
 			for animal in scene:
@@ -67,5 +74,4 @@ with open(test_name, 'a') as file_:
 
 		file_.write('\n')
 			
-	
-
+exit()
