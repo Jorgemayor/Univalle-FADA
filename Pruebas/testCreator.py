@@ -39,9 +39,12 @@ with open(test_name, 'w') as file_:
 
 
 while len(scenes) < ((m - 1) * k):
-	
-	scene = frozenset(random.choices(animal_names, k=3))
-	scenes.add(scene)
+
+	scene = set()
+	while len(scene) < 3:
+		scene.add(random.choice(animal_names))
+	scenes.add(frozenset(scene))
+	print(str(len(scenes)) + '\n')
 	
 
 with open(test_name, 'a') as file_:
