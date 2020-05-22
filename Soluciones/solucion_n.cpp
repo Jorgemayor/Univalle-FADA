@@ -1,12 +1,18 @@
 #include <iostream>
 #include <string.h>
 #include <iomanip>
+<<<<<<< HEAD
+=======
+#include <algorithm>
+#include <chrono>
+>>>>>>> bfee45518859a36411ab48ad1d6b11c3a0d889b0
 #include <unordered_map>
 #include <vector>
 #include <stdlib.h>
 #include <string.h>
 #include <fstream>
 using namespace std;
+using namespace std::chrono;
 
 int n, m, k;
 vector<vector<vector<string>>> show;
@@ -309,8 +315,9 @@ vector<vector<string>> breakTiedScenes(vector<vector<string>> part) {
  *
  */
 int main() {
-	
-	string testCase = "test";
+
+	auto start = high_resolution_clock::now();
+	string testCase = "prueba1";
 	ifstream file ("../Pruebas/" + testCase + ".txt");
 	file >> n >> m >> k;
 	setAnimals(file);
@@ -384,7 +391,7 @@ int main() {
 		message += popularAnimals[0];
 		int i = 1;
 		
-		for(i; i<numberOfAnimals - 1; i++) {
+		for(int i = 1; i<numberOfAnimals - 1; i++) {
 			message += ", " + popularAnimals[i];
 		}
 		message += " y " + popularAnimals[i];
@@ -403,7 +410,7 @@ int main() {
 		message += unpopularAnimals[0];
 		int i = 1;
 		
-		for(i; i<numberOfAnimals - 1; i++) {
+		for(int i; i<numberOfAnimals - 1; i++) {
 			message += ", " + unpopularAnimals[i];
 		}
 		message += " y " + unpopularAnimals[i];
@@ -415,5 +422,9 @@ int main() {
 	}
 	
 	cout << "El promedio de grandeza de todo el espectaculo fue de " << fixed << setprecision(2) << showAwesomeness / ((m - 1.0) * k * 2) << endl;
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(stop - start);
+    cout << "Tiempo: "<< duration.count() << endl;
 	return 0;
+
 }

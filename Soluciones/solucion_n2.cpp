@@ -5,9 +5,11 @@
 #include <vector>
 #include <unordered_map>
 #include <stdlib.h>
+#include <chrono>
 #include <string.h>
 #include <fstream>
 using namespace std;
+using namespace std::chrono;
 
 int n, m, k;
 vector<vector<vector<string>>> show;
@@ -272,9 +274,13 @@ void sortParts() {
  * Main function
  *
  */
-int main() {
 
-    string testCase = "prueba2";
+
+
+int main() {
+    auto start = high_resolution_clock::now();
+
+    string testCase = "prueba3";
     ifstream file ("../Pruebas/" + testCase + ".txt");
     file >> n >> m >> k;
     setAnimals(file);
@@ -316,5 +322,11 @@ int main() {
 
 
     cout << "El promedio de grandeza de todo el espectaculo fue de " << fixed << setprecision(2) << getShowAverageAwesomeness() << endl;
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(stop - start);
+    cout << "Tiempo: "<< duration.count() << endl;
     return 0;
+
+
 }
+
