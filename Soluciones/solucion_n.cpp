@@ -1,11 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include <iomanip>
-<<<<<<< HEAD
-=======
-#include <algorithm>
 #include <chrono>
->>>>>>> bfee45518859a36411ab48ad1d6b11c3a0d889b0
 #include <unordered_map>
 #include <vector>
 #include <stdlib.h>
@@ -317,7 +313,7 @@ vector<vector<string>> breakTiedScenes(vector<vector<string>> part) {
 int main() {
 
 	auto start = high_resolution_clock::now();
-	string testCase = "prueba1";
+	string testCase = "test";
 	ifstream file ("../Pruebas/" + testCase + ".txt");
 	file >> n >> m >> k;
 	setAnimals(file);
