@@ -281,8 +281,6 @@ int main() {
 	sortScenes();
 	sortParts();
 
-	//Pruebas
-
 	cout << endl << "Apertura" << endl;
 
 	for(int i=0; i<k*(m-1); i++) {
