@@ -3,12 +3,14 @@
 #include <iomanip> 
 #include <map>
 #include <unordered_map>
+#include <chrono>
 #include <vector>
 #include <stdlib.h>
 #include <string.h>
 #include <fstream>
 using namespace std;
 using namespace std::chrono;
+
 int n, m, k;
 vector<vector<vector<string>>> show;
 map<vector<string>, vector<string>> sortedScenes;
@@ -16,6 +18,7 @@ map<vector<string>, int> scenesAwesomeness;
 map<string, int> animals;
 unordered_map<string, int> animalParticipations;
 int showAwesomeness = 0;
+int biggestSceneAwesomeness = 0;
 
 /**
  * Reads the input related to the animals from an
@@ -185,9 +188,21 @@ void sortScenes() {
 	for(int i=0; i<m; i++) {
 		
 		vector<vector<string>> part = show[i];
-		vector<int> sortedIndexes[3*n-2];
+		int biggestPartSceneAwesomeness = 0;
+		int partSize = part.size();
+		for(int j=0; j<partSize; j++) {
+			int sceneAwesomeness = getSceneAwesomeness(part[j]);
+			if(sceneAwesomeness > biggestPartSceneAwesomeness) {
 
-		for(int j=0; j<part.size(); j++) {
+				biggestPartSceneAwesomeness = sceneAwesomeness;
+				if(sceneAwesomeness > biggestSceneAwesomeness)
+					biggestSceneAwesomeness = sceneAwesomeness;
+			}
+		}
+
+		vector<int> sortedIndexes[biggestPartSceneAwesomeness + 1];
+
+		for(int j=0; j<partSize; j++) {
 
 			vector<string> scene = part[j];
 			int awesomeness = getSceneAwesomeness(scene);
@@ -195,8 +210,7 @@ void sortScenes() {
 		}
 		
 		vector<vector<string>> sortedPart;
-		for(int j=6; j<=3*n-3; j++) {
-			
+		for(int j=6; j<=biggestPartSceneAwesomeness; j++) {
 			vector<int> scenesWithEqualAwesomeness = sortedIndexes[j];
 
 			for(int l=0; l<scenesWithEqualAwesomeness.size(); l++) {
@@ -258,7 +272,7 @@ void sortParts() {
 int main() {
 
     auto start = high_resolution_clock::now();
-	string testCase = "pruebatest";
+	string testCase = "prueba1";
 	ifstream file ("../Pruebas/" + testCase + ".txt");
 	file >> n >> m >> k;
 	setAnimals(file);
