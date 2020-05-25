@@ -1,16 +1,23 @@
 
 #include <iostream>
+#include <vector>
+#include <numeric>
+
 using namespace std;
 
-
+int n ;
+int U ;
+vector<int> C;
+vector<int> B;
+vector<int> acumUtility;
+vector<int> pickedEquips;
 
 
 int min(int a, int b) { return (a < b) ? a : b; }
 int max(int a, int b) { return (a > b) ? a : b; }
 
-int equips[] = {};
 
-int chooseEquip(int n, int P, int U, int C[], int B[])
+int chooseEquip(int P)
 {
 
 
@@ -20,16 +27,20 @@ int chooseEquip(int n, int P, int U, int C[], int B[])
 
 
     if (C[n - 1] > P)
-        return chooseEquip(n - 1 , P, U, C, B);
+    {
+        n--;
+        return chooseEquip(P);}
 
 
-    else
-        return max(
-                B[n - 1] + chooseEquip(n - 1, P - C[n - 1], U, C, B),
-                chooseEquip(n - 1 , P, U, C, B));
-                equips[n]= 1;
+    else {
+        n--;
+        if(B[n] + chooseEquip(P - C[n]) > chooseEquip(P))
+        {
+            pickedEquips.at(n) = 1;
+        }
+        return max(B[n] + chooseEquip(P - C[n]), chooseEquip(P));
 
-
+    }
 }
 
 
@@ -39,16 +50,26 @@ int chooseEquip(int n, int P, int U, int C[], int B[])
 
 int main()
 {
+     n = 5;
+     U = 11;
+     C = {1,3,4,6,9};
+     B = {2,4,3,4,6};
+    acumUtility.assign(n, 0);
+    pickedEquips.assign(n, 0);
 
-    int n = 5;
-    int P = 22;
-    int U = 11;
-    int C[] = {1, 3, 4, 6, 9};
-    int B[] = {2, 4, 3, 4, 6};
-    int equips[5] ={};
 
-    cout<<chooseEquip(n ,P, U, C, B)<<endl;
-    cout<<equips;
+    int aux = accumulate(B.begin(), B.end(), 0);
+    for(int i = 0; i < n; i++ ){
+        acumUtility.at(i) = aux;
+        aux -= B[i];}
+
+    for(int i = 0; i < n; i++ ){
+        cout<<pickedEquips[i]<<" ";}
+
+
+
+    cout<<endl<<chooseEquip(9);
+
     return 0;
 }
 
