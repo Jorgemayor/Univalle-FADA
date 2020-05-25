@@ -37,14 +37,14 @@ int main() {
 	int cases[n+1][c+1];
 
 	for(int i=0; i<=n; i++)
-		cases[i][0] = 0;
-
-	for(int i=0; i<=c; i++)
-		cases[0][i] = 0;
-
-	for(int i=1; i<=k; i++)
-		for(int j=1; j<=c; j++) {
+		for(int j=0; j<=c; j++) {
 		
+			if(not i or not j) {
+			
+				cases[i][j] = 0;
+				continue;
+			}
+
 			int maxExpWithCurrent, maxExpWithoutCurrent = cases[i-1][j];
 			vector<int> professor = professors[i-1];
 			int expectedSalary = professor[salary];
