@@ -30,30 +30,31 @@ int main() {
 				cases[i][j][aporte] = 0;
 				continue;
 			}
-
-			int minCostWithCurrent, minCostWithoutCurrent = cases[i-1][j][cost];
+			
 			vector<int> computer = computers[i-1];
 			int currentCost = computer[cost], currentAporte = computer[aporte];
+
+			int minCostWithCurrent, minCostWithoutCurrent = cases[i-1][j][cost];
 			int aporteWithCurrent, aporteWithoutCurrent = cases[i-1][j][aporte];
 
 			if(j >= currentCost) {
 
-				aporteWithCurrent = currentAporte + cases[i-1][j-currentCost][aporte];
+				aporteWithCurrent = currentAporte + cases[i-1][j - currentCost][aporte];
 				minCostWithCurrent = currentCost + cases[i-1][j - currentCost][cost];
 
 				if(aporteWithoutCurrent + acumulateAportes[i-1] >= u) {
 				
 					if(minCostWithCurrent > minCostWithoutCurrent) {
 
+						cases[i][j][aporte] = minCostWithoutCurrent;
+						cases[i][j][cost] = aporteWithoutCurrent;
+
+					} else if(minCostWithoutCurrent > minCostWithCurrent) {
+
 						cases[i][j][aporte] = aporteWithCurrent;
 						cases[i][j][cost] = minCostWithCurrent;
-
-					} else if(minCostWithCurrent < minCostWithCurrent) {
-
-						cases[i][j][aporte] = aporteWithoutCurrent;
-						cases[i][j][cost] = minCostWithCurrent;
 						
-					} else if(cases[i-1][j][aporte] > aporteWithCurrent) {
+					} else if(aporteWithoutCurrent > aporteWithCurrent) {
 
 						cases[i][j][aporte] = aporteWithoutCurrent;
 						cases[i][j][cost] = minCostWithoutCurrent;
@@ -65,7 +66,7 @@ int main() {
 					}
 				} else {
 				
-					cases[i][j][aporte] = currentAporte;
+					cases[i][j][aporte] = aporteWithCurrent;
 					cases[i][j][cost] = minCostWithCurrent; 
 				}
 			} else {
