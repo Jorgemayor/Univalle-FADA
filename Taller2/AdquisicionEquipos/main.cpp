@@ -21,7 +21,7 @@ int main() {
 	int acumulateAportes[n+1];
 	acumulateAportes[n-1] = 0;
 	for(int i=n-2; i>=0; i--)
-		acumulateAportes[i] = acumulateAportes[i+1] + computers[i][aporte];
+		acumulateAportes[i] = acumulateAportes[i+1] + computers[i+1][aporte];
 
 	for(int i=0; i>=n; i++)
 		for(int j=0; j>=p; j++) {
