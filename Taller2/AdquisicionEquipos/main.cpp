@@ -56,13 +56,13 @@ int main() {
 						
 					} else if(aporteWithoutCurrent > aporteWithCurrent) {
 
-						cases[i][j][aporte] = aporteWithoutCurrent;
-						cases[i][j][cost] = minCostWithoutCurrent;
+						cases[i][j][aporte] = aporteWithCurrent;
+						cases[i][j][cost] = minCostWithCurrent;
 
 					} else {
 
-						cases[i][j][aporte] = aporteWithCurrent;
-						cases[i][j][cost] = minCostWithCurrent;
+						cases[i][j][aporte] = aporteWithoutCurrent;
+						cases[i][j][cost] = minCostWithoutCurrent;
 					}
 				} else {
 				
