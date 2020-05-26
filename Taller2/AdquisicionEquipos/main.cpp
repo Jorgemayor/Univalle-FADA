@@ -22,8 +22,8 @@ int main() {
 	for(int i=n-2; i>=0; i--)
 		acumulateAportes[i] = acumulateAportes[i+1] + computers[i+1][aporte];
 
-	for(int i=0; i>=n; i++)
-		for(int j=0; j>=p; j++) {
+	for(int i=0; i<=n; i++)
+		for(int j=0; j<=p; j++) {
 
 			if(i == 0 or j == 0) {
 				cases[i][j][cost] = 0;
@@ -33,7 +33,7 @@ int main() {
 			
 			vector<int> computer = computers[i-1];
 			int currentCost = computer[cost], currentAporte = computer[aporte];
-
+			//cout << "cuCost: " << currentCost << " cuAporte: " << currentAporte << endl;
 			int minCostWithCurrent, minCostWithoutCurrent = cases[i-1][j][cost];
 			int aporteWithCurrent, aporteWithoutCurrent = cases[i-1][j][aporte];
 
@@ -46,8 +46,8 @@ int main() {
 				
 					if(minCostWithCurrent > minCostWithoutCurrent) {
 
-						cases[i][j][aporte] = minCostWithoutCurrent;
-						cases[i][j][cost] = aporteWithoutCurrent;
+						cases[i][j][aporte] = aporteWithoutCurrent;
+						cases[i][j][cost] = minCostWithoutCurrent;
 
 					} else if(minCostWithoutCurrent > minCostWithCurrent) {
 
@@ -56,13 +56,13 @@ int main() {
 						
 					} else if(aporteWithoutCurrent > aporteWithCurrent) {
 
-						cases[i][j][aporte] = aporteWithCurrent;
-						cases[i][j][cost] = minCostWithCurrent;
+						cases[i][j][aporte] = aporteWithoutCurrent;
+						cases[i][j][cost] = minCostWithoutCurrent;
 
 					} else {
 
-						cases[i][j][aporte] = aporteWithoutCurrent;
-						cases[i][j][cost] = minCostWithoutCurrent;
+						cases[i][j][aporte] = aporteWithCurrent;
+						cases[i][j][cost] = minCostWithCurrent;
 					}
 				} else {
 				
@@ -74,9 +74,38 @@ int main() {
 				cases[i][j][aporte] = aporteWithoutCurrent;
 				cases[i][j][cost] = minCostWithoutCurrent;
 			}
-			cout << "[" << i << "," << j << "]" << " max " << cases[i][j] << endl;
+			//cout << "[" << i << "," << j << "]" << " max " << cases[i][j][aporte] << endl;
 		}
+	
+	cout << endl << endl;
+	for(int i=0; i<=n; i++) {
+		for(int j=0; j<=p; j++) {
 
-	cout << cases[n][p] << endl;
+			cout << "[" << cases[i][j][aporte] << "," << cases[i][j][cost] << "]";
+			if(j != p) cout << " ";
+		}
+		cout << endl;
+	}
+/*
+	int resCost = cases[n][p][cost], resAporte = cases[n][p][aporte];
+	int w = p; 
+	for(int i = n; i > 0 && resAporte > 0; i--) {
+	
+		//cout << "It: " << i << "res" << resCost << endl;
+		if (resAporte == cases[i - 1][w][aporte])  
+			continue;         
+		else { 
+  
+            // This item is included. 
+            //printf("\n\n%d ", computers[i - 1][cost]);
+              
+            // Since this weight is included its  
+            // value is deducted 
+            resAporte = resAporte - computers[i - 1][aporte]; 
+            w = w - computers[i - 1][cost];
+        } 
+    } */
+
+	cout << "\n\nap: " << cases[n][p][aporte] << " cost: " << cases[n][p][cost] << endl;
 	return 0;
 }
