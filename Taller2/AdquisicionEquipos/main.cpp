@@ -6,7 +6,7 @@ int main() {
 
 	vector<vector<int>> computers;
 	int n, p, u;
-	int cost = 0, aporte = 1, totalCost = 0;
+	int cost = 0, aporte = 1;
 
 	cin >> n >> p >> u;
 	int cases[n+1][p+1][2];
@@ -14,7 +14,6 @@ int main() {
 	for(int i=0; i<n; i++) {
 		int currentCost, currentAporte;
 		cin >> currentCost >> currentAporte;
-		totalCost += currentCost;
 		computers.push_back({currentCost, currentAporte});
 	}
 
@@ -32,7 +31,7 @@ int main() {
 				continue;
 			}
 
-			int minCostWithCurrent = totalCost, minCostWithoutCurrent = cases[i-1][j][cost];
+			int minCostWithCurrent, minCostWithoutCurrent = cases[i-1][j][cost];
 			vector<int> computer = computers[i-1];
 			int currentCost = computer[cost], currentAporte = computer[aporte];
 			int aporteWithCurrent, aporteWithoutCurrent = cases[i-1][j][aporte];
